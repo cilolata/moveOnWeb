@@ -1,0 +1,162 @@
+.main{
+    background-color:  #242424;
+}
+
+.price__table{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5%;
+
+}
+
+.price__table-content{
+    display: flex;
+    height: 40vh;
+    width: 30%;
+    background-color: #0f0f0f;
+    margin: 1%;
+}
+
+.price__table--img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;    
+    background-image: url(../../assets/images-1.png);
+    background-repeat: no-repeat;
+}
+
+.price__table--text{
+    width: 73%;
+    margin-left: 25%;
+    margin-top: 5%;
+    line-height: 30px;
+    color:#fff;
+}
+
+.border-bottom{
+    width: 25%;
+    padding-top: 2%;
+    border-bottom: 2px solid #fff;
+}
+
+.price__table--text p{
+    margin-top: 3%;
+    margin-bottom: 4%;
+
+}
+
+.price__table--link{
+    text-decoration: none;
+    color: #fff;
+    background-color: teal;
+    background-size: cover;
+    border: 1px solid teal;
+    padding: 4%;    
+}
+
+.price__table-content:hover {
+    background-color: teal;
+}
+
+.price__table-content:hover .price__table--link{
+    background:none;
+    border: 2px solid #fff;
+}
+
+.new__product{
+    padding: 0 6% 6%;
+}
+
+.product__container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
+
+.title__name{
+    display: flex;
+    justify-content: center;
+    background: url("../../assets/bg_title.png") repeat-x scroll center center rgba(0, 0, 0, 0);
+    padding: 20px;
+}
+
+.title__name h4{
+    width: 15%;
+    padding: 1% 2%;
+    text-align: center;
+    border: 3px solid #fff;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+
+.product__wrapper{
+    width: 23%;
+    margin: 1%;
+    border: 2px solid #242424;
+    background-color: #0f0f0f;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.info__products{
+    padding: 2%;
+}
+
+.product__name{
+    padding: 2% 0;
+
+}
+
+.product__name a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.price__box{
+    color: teal;
+    padding: 3% 0;
+
+}
+
+.old__price{
+    color: #9a9a9a;
+    text-decoration: line-through;
+    margin-left: 2%;
+    font-size: 0.8rem;
+}
+
+.actions ul{
+    display: flex;
+    list-style: none;
+    padding: 3% 0;
+}
+
+
+.actions ul li{
+    width: 10%;
+    background-color: teal;
+    background-size: cover;
+    margin-right: 2%;
+    padding: 2%;
+
+}
+
+.actions ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media (max-width: 980px){
+    .price__table{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product__container{
+        display: flex;
+        flex-direction: column;
+    }
+}
