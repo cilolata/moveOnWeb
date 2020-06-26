@@ -1,6 +1,5 @@
 import React from 'react';
-import "./Main.css";
-import "../../Global.css";
+import "./MainHome.css";
 
 import product1 from "../../assets/product1.jpg";
 import product2 from "../../assets/product2.jpg";
@@ -11,11 +10,17 @@ import product6 from "../../assets/product6.jpg";
 import product7 from "../../assets/product7.jpg";
 import product8 from "../../assets/product8.jpg";
 
-import { FaInfo, FaShoppingCart, FaSearch, FaStar, FaCartArrowDown, FaArrowAltCircleDown, FaArrowsAltH, FaArrowsAlt } from "react-icons/fa"
+import { FaInfo, FaShoppingCart, FaSearch, FaStar } from "react-icons/fa"
 
-function Main(){
+const MainHome = () => {
     return(
-        <main className="main">
+        <section className="main">
+            <div className="hero">
+                <div className="hero__heading">
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <input className="hero__register" type="button" value="Try Free"/>
+                </div>
+            </div>
             <section className="price__table">
                 <div className="price__table-content">
                     <div className="price__table--img"> 
@@ -282,8 +287,8 @@ function Main(){
                             </div>
                         </div>
             </section>
-        </main>
+        </section>
     )
 }
 
-export default Main;
+export default MainHome;

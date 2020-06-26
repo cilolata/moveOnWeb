@@ -2,6 +2,42 @@
     background-color:  #242424;
 }
 
+.hero{
+    display: flex;
+    justify-content: center;
+    width:100%;    
+    z-index:9999;
+    background-image: linear-gradient(rgba(63, 62, 62, 0.6), rgba(126, 134, 130, 0.6)), url(../../assets/TREINANDO_EM_CASA_3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.hero__heading{
+    width: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.hero__register{
+    width: 10%;
+    margin-top: 3%;
+    padding: 0.5% 1%;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: teal;
+    border: 1px solid teal;
+
+}
+
+.hero__register:hover{
+    background-color: rgb(2, 95, 95);
+
+}
+
 .price__table{
     display: flex;
     justify-content:space-around;

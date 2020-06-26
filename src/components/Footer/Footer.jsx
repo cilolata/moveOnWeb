@@ -1,13 +1,9 @@
 import React from 'react';
 import "./Footer.css";
-import "../../Global.css";
-
-import {} from "react-icons/fa";
-
 
 import { FaFacebook, FaTwitter, FaInstagram, FaArrowRight } from "react-icons/fa"
 
-function Footer(){
+const Footer = () => {
     return(
         <footer>
             <div className="container">
