@@ -1,4 +1,16 @@
 .section__cadastro{
-    height: 100vh;
+    width: 100%;
+    margin-top: 80%;
 }
+
+.cadastro{
+    margin-top: 80%;
+    background-color: lawngreen;
+
+}
+
+
+
+
+
 

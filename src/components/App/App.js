@@ -1,22 +1,25 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import '../../css/Global.css';
+import '../../css/global.css';
 import './App.css';
 
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import Routes from '../../Routes';
+import Home from "../Home/Home";
+import Cadastro from "../Cadastro/Cadastro";
+// import Footer from '../Footer/Footer';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-       <Header/>
-         <Routes/>
-       <Footer/>
-    </div>
-      </BrowserRouter>
+        <Header/>
+          <Switch>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/cadastro " component={Cadastro}/>
+          </Switch>      
+      </div>
+  </BrowserRouter>
   );
 }
 

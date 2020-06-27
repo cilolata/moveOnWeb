@@ -1,5 +1,5 @@
-.main{
-    background-color:  #242424;
+.mainHome{
+    width: 100%;
 }
 
 .hero{
@@ -44,15 +44,17 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 5%;
+    background-color:  #242424;
+    background-size: cover;
 
 }
 
 .price__table-content{
-    display: flex;
-    height: 40vh;
     width: 30%;
-    background-color: #0f0f0f;
+    height: 40vh;
+    display: flex;
     margin: 1%;
+    background-color: #0f0f0f;
 }
 
 .price__table--img{
@@ -84,12 +86,12 @@
 }
 
 .price__table--link{
-    text-decoration: none;
-    color: #fff;
+    padding: 4%;    
     background-color: teal;
     background-size: cover;
     border: 1px solid teal;
-    padding: 4%;    
+    text-decoration: none;
+    color: #fff;
 }
 
 .price__table-content:hover {
@@ -103,9 +105,11 @@
 
 .new__product{
     padding: 0 6% 6%;
+    background-color:  #242424;
+    background-size: cover;
 }
 
-.product__container{
+.products__container{
     display: flex;
     flex-wrap: wrap;
     margin-top: 5%;
@@ -121,9 +125,9 @@
 .title__name h4{
     width: 15%;
     padding: 1% 2%;
-    text-align: center;
     border: 3px solid #fff;
     color: #fff;
+    text-align: center;
     font-size: 1.5rem;
 }
 
@@ -152,31 +156,31 @@
 }
 
 .price__box{
-    color: teal;
     padding: 3% 0;
+    color: teal;
 
 }
 
 .old__price{
+    margin-left: 2%;
     color: #9a9a9a;
     text-decoration: line-through;
-    margin-left: 2%;
     font-size: 0.8rem;
 }
 
 .actions ul{
     display: flex;
-    list-style: none;
     padding: 3% 0;
+    list-style: none;
 }
 
 
 .actions ul li{
     width: 10%;
-    background-color: teal;
-    background-size: cover;
     margin-right: 2%;
     padding: 2%;
+    background-color: teal;
+    background-size: cover;
 
 }
 
