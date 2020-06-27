@@ -3,8 +3,7 @@ import "./Header.css";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import Cadastro from '../Cadastro/Cadastro';
-import MainHome from '../MainHome/MainHome';
+
 
 const Header = () =>{
     const [isClick, setIsClick]= useState(false);
@@ -41,12 +40,7 @@ const Header = () =>{
            </div>
         </div>     
         </header>
-        <main>
-            {isClick ?
-            <Cadastro />
-            : <MainHome/>
-            }
-        </main>
+     
         </>
     )
 }
