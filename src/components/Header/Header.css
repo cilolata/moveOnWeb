@@ -1,5 +1,4 @@
 .header__container{
-    position:fixed;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -8,7 +7,6 @@
     background-size: cover;
     box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.2);
     top:0;
-   
 }
 
 .header__container--brand{
@@ -73,7 +71,7 @@
     background-color: teal;
     border: 1px solid teal;
     color: #fff;
-    padding: 5% 10%;
+    padding: 15% 20%;
     border-radius: 1px;
 
 }
