@@ -2,6 +2,7 @@ import React from 'react';
 import "./Footer.css";
 
 import { FaFacebook, FaTwitter, FaInstagram, FaArrowRight } from "react-icons/fa"
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return(
@@ -9,7 +10,7 @@ const Footer = () => {
             <div className="container">
                 <div className="copy__right">
                     <div className="footer__right">
-                        <div className="line1">Copyright &copy; 2020 <a href="#"> MoveOn Fitness</a></div>
+                        <div className="line1">Copyright &copy; 2020 <Link to="/"> MoveOn Fitness</Link></div>
                     </div>
                     <div className="social__icon">
                         <a href="#"><FaFacebook/></a>

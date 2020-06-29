@@ -1,11 +1,10 @@
 .section__cadastro{
     width: 100%;
-    margin-top: 80%;
+    height: 80vh;
 }
 
 .cadastro{
-    margin-top: 80%;
-    background-color: lawngreen;
+    margin-top: 10%;
 
 }
 
