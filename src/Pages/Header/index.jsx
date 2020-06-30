@@ -24,7 +24,7 @@ const Header = () =>{
                     </ul>
                 </nav>
                 <div className="header__button--container">
-                    <button className="btn__header">Entrar</button> 
+                   <Link to="/Login"> <button className="btn__header">Entrar</button></Link>
                 </div>
             </div>     
         </>
