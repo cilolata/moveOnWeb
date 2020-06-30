@@ -1,5 +1,4 @@
 .header__container{
-    position:fixed;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -75,7 +74,6 @@
     color: #fff;
     padding: 5% 10%;
     border-radius: 1px;
-
 }
 
 .btn__header:hover{

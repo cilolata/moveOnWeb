@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Home.css";
+import "./style.css";
 import "../../css/global.css";
 
 import product1 from "../../assets/product1.jpg";
