@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { useField } from "@unform/core";
-
+import "./style.css";
 
 const Input = ({ name, ...rest }) => {
     const inputRef = useRef(null)
-    const { fieldName, registerField, defaultValue, error } = useField(name);
+    const { fieldName, registerField, error } = useField(name);
 
     
     useEffect(() => {
@@ -17,7 +17,10 @@ const Input = ({ name, ...rest }) => {
     }, [fieldName, registerField]);
 
     return(
-        <input ref={inputRef} {...rest}  defaultValue={defaultValue} />
+        <div classname="div__ipunt">
+            <input className="input__cadastro" ref={inputRef} {...rest} />
+             {error  && <span style={{color: '#f00', fontSize: "0.8rem"}}>{error}</span> }
+        </div>
     )
 }
 

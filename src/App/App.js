@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter} from "react-router-dom";
 
-import "../../css/global.css";
+import "../css/global.css";
 import "./App.css";
 
-import Header from "../Header/Header";
-import Footer from '../Footer/Footer';
-import Routes from '../../Routes';
+import Header from "../Pages/Header";
+import Footer from '../Pages/Footer';
+import Routes from '../Routes';
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Form } from '@unform/web';
-import Input from './Input';
+import Input from '../../components/Input';
 
-import './login.css';
+import './style.css';
 
 const Login = () => {
   const handleSubmit = (data) => {
