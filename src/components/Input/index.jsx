@@ -4,7 +4,7 @@ import "./style.css";
 
 const Input = ({ name, ...rest }) => {
     const inputRef = useRef(null)
-    const { fieldName, registerField, error } = useField(name);
+    const { fieldName, registerField, error, clearError } = useField(name);
 
     
     useEffect(() => {
@@ -17,8 +17,8 @@ const Input = ({ name, ...rest }) => {
     }, [fieldName, registerField]);
 
     return(
-        <div classname="div__ipunt">
-            <input className="input__cadastro" ref={inputRef} {...rest} />
+        <div className="div__ipunt">
+            <input className="input__cadastro" ref={inputRef}  onFocus={clearError} {...rest} />
              {error  && <span style={{color: '#f00', fontSize: "0.8rem"}}>{error}</span> }
         </div>
     )

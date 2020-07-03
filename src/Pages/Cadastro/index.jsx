@@ -1,6 +1,8 @@
 import React, {useRef} from 'react';
+import { useHistory } from 'react-router-dom';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
+import api from '../../services/api';
 
 
 import './style.css';
@@ -9,9 +11,11 @@ import "../../css/global.css"
 import Input from '../../components/Input';
 
 const Cadastro = () => {
+  const history = useHistory();
   const formRef = useRef(null);
 
   const  handleSubmit = async(data, { reset }) => {
+
     try {
       const schema = Yup.object().shape({
         name: Yup.string().required("O nome é obrigatório"),
@@ -29,6 +33,12 @@ const Cadastro = () => {
 
     formRef.current.setErrors({})
     reset();
+    const response = await api.post('users', data)
+
+    if(response.data){
+      history.push('/login');
+    }
+    
   } catch(error) {
     if(error instanceof Yup.ValidationError){
       const errorMessages = {};
@@ -40,6 +50,7 @@ const Cadastro = () => {
       formRef.current.setErrors(errorMessages)
     }
   }
+
 }
 
 
@@ -60,7 +71,6 @@ const Cadastro = () => {
             </Form>
           </div>
         </div>
-
       </section>
 
     )
