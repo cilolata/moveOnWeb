@@ -13,6 +13,7 @@ const Login = () => {
   const handleSubmit = async (data,  { reset }) => {
   
     try {
+      
       const schema = Yup.object().shape({
         email: Yup.string()
         .email("Digite um e-mail válido")
