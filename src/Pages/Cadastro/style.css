@@ -1,6 +1,5 @@
 .section__cadastro{
     width: 100%;
-    height: 100vh;
 }
 
 .cadastro{
@@ -8,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 2%;
 }
 
 .cadastro h1{
@@ -17,7 +16,6 @@
 
 .container__cadastro{
     width: 100%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -49,11 +49,11 @@ const Cadastro = () => {
           <h1>CADASTRO</h1>
           <div className="container__cadastro">
             <Form classname="form__cadastro" ref={formRef}  onSubmit={handleSubmit}>
-              <p>Nome</p>
+              <label>Nome</label>
               <Input name="name"/>
-              <p>Email</p>
+              <label>E-mail</label>
               <Input name="email"/>
-              <p>Senha</p>
+              <label>Senha</label>
               <Input type="password" name="password"/>
               <p>a senha precisa ter 8 caracteres</p>
               <button className="btn__cadastro" type="submit">Enviar</button>

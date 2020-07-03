@@ -1,14 +1,23 @@
-.container-login{
-  width: 100%;
-  max-width: 400px;
-  height: 80vh;
-  margin: auto;
+.login{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  width: 100%;
+  padding: 7% 0;
+  top: 0;
+  right: 0;
+  z-index: 20; 
+  backface-visibility: hidden;
 }
 
-.container-login  button {
+.login__container{
+  padding: 2%;
+  background-color:  #242424;
+  color: #fff;
+
+}
+
+.login__container  button {
   width: 100%;
   margin: 5px 0 0;
   height: 44px;

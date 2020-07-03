@@ -10,12 +10,16 @@ const Login = () => {
   };
 
   return (
-    <div className="container-login">
+    <div className="login">
+      <div className="login__container">
       <Form onSubmit={handleSubmit}>
+        <label>E-mail</label>
         <Input name="email" type="email" placeholder="E-mail" />
+        <label>Senha</label>
         <Input name="password" type="password" placeholder="Senha"/>
         <button type="submit">Entrar</button>
       </Form>
+      </div>
     </div>
   );
 }
