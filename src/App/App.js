@@ -1,23 +1,32 @@
-import React from "react";
-import { BrowserRouter} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+// import { Provider } from 'react-redux';
 
-import "../css/global.css";
-import "./App.css";
+import './App.css';
+import GlobalStyle from '../styles/global';
 
-import Header from "../Pages/Header";
-import Footer from '../Pages/Footer';
+import Header from '../Pages/Header';
 import Routes from '../Routes';
+import Footer from '../Pages/Footer';
+
+// eslint-disable-next-line import/extensions
+import history from '../services/history';
+
+// import store from '../store';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-          <Routes/>
-        <Footer/>
-      </div>
-    </BrowserRouter>
-  );
+    return (
+        // <Provider store={store}>
+        <div className="App">
+            <BrowserRouter history={history}>
+                <GlobalStyle />
+                <Header />
+                <Routes />
+                <Footer />
+            </BrowserRouter>
+        </div>
+        // </Provider>
+    );
 }
 
 export default App;

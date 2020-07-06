@@ -1,27 +1,41 @@
-import React, { useRef, useEffect } from "react";
-import { useField } from "@unform/core";
-import "./style.css";
+import React, { useRef, useEffect } from 'react';
+import { useField } from '@unform/core';
+import './style.css';
 
 const Input = ({ name, ...rest }) => {
-    const inputRef = useRef(null)
+    const inputRef = useRef(null);
     const { fieldName, registerField, error, clearError } = useField(name);
 
-    
     useEffect(() => {
         registerField({
             name: fieldName,
             ref: inputRef.current,
-            path: 'value'
-        })
-
+            path: 'value',
+        });
     }, [fieldName, registerField]);
 
-    return(
+    return (
         <div className="div__ipunt">
-            <input className="input__cadastro" ref={inputRef}  onFocus={clearError} {...rest} />
-             {error  && <span style={{color: '#f00', fontSize: "0.8rem"}}>{error}</span> }
+            <input
+                className="input__cadastro"
+                ref={inputRef}
+                onFocus={clearError}
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...rest}
+            />
+            {error && (
+                <span
+                    style={{
+                        color: '#f00',
+                        fontSize: '0.8rem',
+                        padding: '5px 0',
+                    }}
+                >
+                    {error}
+                </span>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default Input;
