@@ -61,15 +61,19 @@ const Cadastro = () => {
                         onSubmit={handleSubmit}
                         style={{ width: '30%' }}
                     >
-                        <span>Nome</span>
-                        <Input name="name" classname="input__Cadastro" />
-                        <span>E-mail</span>
-                        <Input name="email" />
-                        <span>Senha</span>
+                        <Input
+                            name="name"
+                            classname="input__Cadastro"
+                            placeholder="Nome"
+                            title="Nome"
+                        />
+                        <Input name="email" placeholder="Email" title="Email" />
                         <Input
                             type="password"
                             name="password"
                             classname="input__Cadastro"
+                            placeholder="Senha"
+                            title="Senha"
                         />
                         <p className="form__intructions">
                             obs: a senha precisa conter 8 caracteres

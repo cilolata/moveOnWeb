@@ -11,14 +11,31 @@ export default createGlobalStyle`
   font-family: 'Montserrat', sans-serif;
 }
 
-html, body{
+*:focus{
+    outline: 0;
+}
+
+html, body, #root{
     width: 100%;
     min-height: 100%;
     -webKit-font-smoothing: antialiased !important;
 }
 
+body, input, button{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
 button{
     cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
 }
 
 `;

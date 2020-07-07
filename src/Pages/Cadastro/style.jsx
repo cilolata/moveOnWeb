@@ -29,10 +29,6 @@ export const SectionCadastro = styled.section`
         align-items: center;
     }
 
-    .form__cadastro span {
-        margin: 5% 0;
-    }
-
     .btn__cadastro {
         width: 100%;
         padding: 5%;
@@ -42,6 +38,10 @@ export const SectionCadastro = styled.section`
         color: #fff;
         border-radius: 1px;
         font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    span{
         font-weight: bold;
     }
 

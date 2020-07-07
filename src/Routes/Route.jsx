@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
+import store from '../store';
+
 export default function RouteWrapper({
     // eslint-disable-next-line react/prop-types
     component: Component,
@@ -10,7 +12,7 @@ export default function RouteWrapper({
     isPrivate,
     ...rest
 }) {
-    const signed = false;
+    const { signed } = store.getState().auth;
 
     if (!signed && isPrivate) {
         return <Redirect to="/dashboard" />;
