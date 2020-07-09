@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
 import './style.css';
 
+// eslint-disable-next-line react/prop-types
 const Input = ({ name, ...rest }) => {
     const inputRef = useRef(null);
     const { fieldName, registerField, error, clearError } = useField(name);

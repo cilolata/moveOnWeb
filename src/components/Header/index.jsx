@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../Dashboard';
 import Auth from '../Auth';
 
 // eslint-disable-next-line import/extensions

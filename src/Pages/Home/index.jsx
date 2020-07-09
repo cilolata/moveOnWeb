@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
 import product1 from '../../assets/product1.jpg';
@@ -15,6 +17,7 @@ import product8 from '../../assets/product8.jpg';
 const Home = () => {
     return (
         <>
+            <Header />
             <section className="mainHome">
                 <div className="hero">
                     <div className="hero__heading">
@@ -451,6 +454,7 @@ const Home = () => {
                     </div>
                 </section>
             </section>
+            <Footer />
         </>
     );
 };

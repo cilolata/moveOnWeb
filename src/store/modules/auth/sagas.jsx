@@ -15,7 +15,7 @@ export function* signIn({ payload }) {
 
     if (!user.id) {
         // eslint-disable-next-line no-console
-        console.error('Usuário não encontrado');
+        console.tron.error('Usuário não encontrado');
         return;
     }
 

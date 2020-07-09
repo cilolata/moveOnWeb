@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useHistory } from 'react-router-dom';
 
-import './style.css';
+import './style';
 
 function Dashboard() {
     // const history = useHistory();

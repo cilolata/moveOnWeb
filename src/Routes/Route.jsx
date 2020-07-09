@@ -5,6 +5,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 import store from '../store';
 
+// eslint-disable-next-line react/prop-types
 export default function RouteWrapper({
     // eslint-disable-next-line react/prop-types
     component: Component,
@@ -15,17 +16,9 @@ export default function RouteWrapper({
     const { signed } = store.getState().auth;
 
     if (!signed && isPrivate) {
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/" />;
     }
-
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return (
-        <Route
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...rest}
-            render={(props) => <Component {...props} />}
-        />
-    );
+    return <Route {...rest} render={(props) => <Component {...props} />} />;
 }
 
 RouteWrapper.prototype = {
