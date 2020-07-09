@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -18,12 +18,10 @@ const schema = Yup.object().shape({
 });
 
 // eslint-disable-next-line react/prop-types
-export default function Auth() {
-    const [IsModalVisible, setIsModalVisible] = useState(false);
+export default function Auth(props) {
+    // eslint-disable-next-line react/prop-types
+    const { handleShowModal, IsModalVisible } = props;
 
-    const handleShowModal = event => {
-        setIsModalVisible(true);
-    };
     const dispatch = useDispatch();
 
     const handleSubmit = ({ email, password }) => {

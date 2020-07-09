@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './style.css';
 import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
@@ -17,13 +18,18 @@ import product8 from '../../assets/product8.jpg';
 function Home() {
     const [IsModalVisible, setIsModalVisible] = useState(false);
 
-    const handleShowModal = event => {
+    // eslint-disable-next-line no-unused-vars
+    const handleShowModal = (event) => {
         setIsModalVisible(true);
+    };
+
+    const handleCloseModal = (event) => {
+        setIsModalVisible(false);
     };
 
     return (
         <main>
-        <Header />
+            <Header />
             <section className="mainHome">
                 <div className="hero">
                     <div className="hero__heading">
@@ -35,7 +41,11 @@ function Home() {
                         >
                             Cadastre-se
                         </button>
-                        {IsModalVisible && <CadastroInicial />}
+                        {IsModalVisible && (
+                            <CadastroInicial
+                                handleCloseModal={handleCloseModal}
+                            />
+                        )}
                     </div>
                 </div>
 

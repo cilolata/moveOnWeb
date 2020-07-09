@@ -1,9 +1,13 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
 import { Link } from 'react-router-dom';
+import { IoIosClose } from 'react-icons/io';
 import { SectionCadastro } from './style';
 
 import Input from '../Input';
@@ -18,7 +22,9 @@ const schema = Yup.object().shape({
         .required('A senha é obrigatória'),
 });
 
-const CadastroInicial = () => {
+function CadastroInicial(props) {
+    const { handleCloseModal } = props;
+
     const handleSubmit = async (data) => {
         // eslint-disable-next-line no-console
         console.tron.log(data);
@@ -27,6 +33,9 @@ const CadastroInicial = () => {
     return (
         <SectionCadastro>
             <div className="cadastro">
+                <button className="btn__close" onClick={handleCloseModal}>
+                    <IoIosClose className="icon__close" />
+                </button>
                 <h1 className="heading__cadastro">Faça o seu cadastro</h1>
                 <p className="p__cadastro">ou entre com</p>
                 <div className="container__cadastro">

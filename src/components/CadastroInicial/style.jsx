@@ -15,8 +15,18 @@ export const SectionCadastro = styled.section`
 
     .cadastro {
         width: 50%;
-        padding: 4% 0;
+        padding: 1% 0 4% 0;
         background-color: #fff;
+    }
+
+    .btn__close {
+        margin-left: 2%;
+        background: transparent;
+        border: transparent;
+    }
+
+    .icon__close {
+        font-size: 1.5rem;
     }
 
     .cadastro h1 {

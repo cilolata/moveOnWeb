@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
 import store from '../store';
+import Home from '../Pages/Home';
+import Dashboard from '../Pages/Dashboard';
 
 // eslint-disable-next-line react/prop-types
 export default function RouteWrapper({
@@ -18,7 +20,18 @@ export default function RouteWrapper({
     if (!signed && isPrivate) return <Redirect to="/" />;
     if (signed && !isPrivate) return <Redirect to="/dashboard" />;
 
-    return <Route {...rest} render={(props) => <Component {...props} />} />;
+    const Pages = signed ? Dashboard : Home;
+
+    return (
+        <Route
+            {...rest}
+            render={(props) => (
+                <Pages>
+                    <Component {...props} />
+                </Pages>
+            )}
+        />
+    );
 }
 
 RouteWrapper.prototype = {
