@@ -13,14 +13,8 @@ export function* signIn({ payload }) {
 
     const { token, user } = response.data;
 
-    if (!user.id) {
-        // eslint-disable-next-line no-console
-        console.tron.error('Usuário não encontrado');
-        return;
-    }
-
     yield put(signInSuccess(token, user));
-    history.pushState('/dashboard');
+    history.push('/dashboard');
 }
 
 export default all([takeLatest('@auth/SIGN_IN_REQUEST', signIn)]);

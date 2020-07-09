@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
+import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
 import product1 from '../../assets/product1.jpg';
 import product2 from '../../assets/product2.jpg';
 import product3 from '../../assets/product3.jpg';
@@ -12,7 +12,6 @@ import product5 from '../../assets/product5.jpg';
 import product6 from '../../assets/product6.jpg';
 import product7 from '../../assets/product7.jpg';
 import product8 from '../../assets/product8.jpg';
-
 
 const Home = () => {
     return (

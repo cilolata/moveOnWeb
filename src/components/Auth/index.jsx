@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -17,6 +16,7 @@ const schema = Yup.object().shape({
         .required('A senha é obrigatória'),
 });
 
+// eslint-disable-next-line react/prop-types
 export default function Auth() {
     const dispatch = useDispatch();
 
