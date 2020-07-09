@@ -3,9 +3,10 @@ import React from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
+import { Link } from 'react-router-dom';
 import { SectionCadastro } from './style';
 
-import Input from '../../components/Input';
+import Input from '../Input';
 
 const schema = Yup.object().shape({
     name: Yup.string().required('O nome é obrigatório'),
@@ -17,7 +18,7 @@ const schema = Yup.object().shape({
         .required('A senha é obrigatória'),
 });
 
-const Cadastro = () => {
+const CadastroInicial = () => {
     const handleSubmit = async (data) => {
         // eslint-disable-next-line no-console
         console.tron.log(data);
@@ -52,9 +53,11 @@ const Cadastro = () => {
                         <p className="form__intructions">
                             obs: a senha precisa conter 8 caracteres
                         </p>
-                        <button className="btn__cadastro" type="submit">
-                            Enviar
-                        </button>
+                        <Link to="/cadastrocompleto">
+                            <button className="btn__cadastro" type="submit">
+                                Enviar
+                            </button>
+                        </Link>
                     </Form>
                 </div>
             </div>
@@ -62,4 +65,4 @@ const Cadastro = () => {
     );
 };
 
-export default Cadastro;
+export default CadastroInicial;

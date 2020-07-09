@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import CadastroInicial from '../../components/CadastroInicial';
 
 import product1 from '../../assets/product1.jpg';
 import product2 from '../../assets/product2.jpg';
@@ -13,19 +14,28 @@ import product6 from '../../assets/product6.jpg';
 import product7 from '../../assets/product7.jpg';
 import product8 from '../../assets/product8.jpg';
 
-const Home = () => {
+function Home() {
+    const [IsModalVisible, setIsModalVisible] = useState(false);
+
+    const handleShowModal = event => {
+        setIsModalVisible(true);
+    };
+
     return (
-        <>
-            <Header />
+        <main>
+        <Header />
             <section className="mainHome">
                 <div className="hero">
                     <div className="hero__heading">
                         <h1>Lorem ipsum dolor sit amet</h1>
-                        <input
+                        <button
                             className="hero__register"
                             type="button"
-                            value="Try Free"
-                        />
+                            onClick={handleShowModal}
+                        >
+                            Cadastre-se
+                        </button>
+                        {IsModalVisible && <CadastroInicial />}
                     </div>
                 </div>
 
@@ -454,8 +464,8 @@ const Home = () => {
                 </section>
             </section>
             <Footer />
-        </>
+        </main>
     );
-};
+}
 
 export default Home;

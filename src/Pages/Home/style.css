@@ -5,7 +5,7 @@
 .hero{
     display: flex;
     justify-content: center;
-    width:100%;    
+    width:100%;
     z-index:9999;
     background-image: linear-gradient(rgba(63, 62, 62, 0.6), rgba(126, 134, 130, 0.6)), url(../../assets/TREINANDO_EM_CASA_3.jpg);
     background-repeat: no-repeat;
@@ -23,9 +23,8 @@
 }
 
 .hero__register{
-    width: 10%;
     margin-top: 3%;
-    padding: 0.5% 1%;
+    padding: 1%;
     font-size: 1.2rem;
     color: #fff;
     background-color: teal;
@@ -60,7 +59,7 @@
 .price__table--img{
     width: 100%;
     height: 100%;
-    vertical-align: middle;    
+    vertical-align: middle;
     background-image: url(../../assets/images-1.png);
     background-repeat: no-repeat;
 }
@@ -86,7 +85,7 @@
 }
 
 .price__table--link{
-    padding: 4%;    
+    padding: 4%;
     background-color: teal;
     background-size: cover;
     border: 1px solid teal;

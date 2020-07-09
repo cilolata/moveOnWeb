@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import Input from '../Input';
 import { signInRequest } from '../../store/modules/auth/actions';
+import CadastroInicial from '../CadastroInicial';
 
 import { Wrapper } from './style';
 
@@ -18,6 +19,11 @@ const schema = Yup.object().shape({
 
 // eslint-disable-next-line react/prop-types
 export default function Auth() {
+    const [IsModalVisible, setIsModalVisible] = useState(false);
+
+    const handleShowModal = event => {
+        setIsModalVisible(true);
+    };
     const dispatch = useDispatch();
 
     const handleSubmit = ({ email, password }) => {
@@ -49,7 +55,14 @@ export default function Auth() {
                             Entrar
                         </button>
                     </Form>
+                    <input
+                        type="button"
+                        className="input__auth"
+                        onClick={handleShowModal}
+                        value="cadastre-se"
+                    />
                 </div>
+                {IsModalVisible && <CadastroInicial />}
             </Wrapper>
         </>
     );
