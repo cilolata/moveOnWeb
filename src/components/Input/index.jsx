@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
 
+// eslint-disable-next-line import/extensions
 import { ContainerInput } from './style.jsx';
 
 // eslint-disable-next-line react/prop-types

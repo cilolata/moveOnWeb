@@ -3,10 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-import store from '../store';
 import Home from '../Pages/Home';
 import Dashboard from '../Pages/Dashboard';
 
+import store from '../store';
 // eslint-disable-next-line react/prop-types
 export default function RouteWrapper({
     // eslint-disable-next-line react/prop-types
@@ -34,9 +34,10 @@ export default function RouteWrapper({
     );
 }
 
-RouteWrapper.prototype = {
+RouteWrapper.prototypes = {
     isPrivate: PropTypes.bool,
-    component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
+        .isRequired,
 };
 
 RouteWrapper.defaultProps = {
