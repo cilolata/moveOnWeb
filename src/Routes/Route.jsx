@@ -3,6 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
+import Dashboard from '../Pages/Dashboard';
+import Home from '../Pages/Home/index';
+
 import store from '../store';
 // eslint-disable-next-line react/prop-types
 export default function RouteWrapper({
