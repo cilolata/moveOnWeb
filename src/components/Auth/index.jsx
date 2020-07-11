@@ -1,23 +1,24 @@
 import React from 'react';
-import { Form } from '@unform/web';
-import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { Form } from '@unform/web';
+// import * as Yup from 'yup';
 import Input from '../Input';
 import { signInRequest } from '../../store/modules/auth/actions';
 
 import { Wrapper } from './style';
 
-const schema = Yup.object().shape({
-    email: Yup.string()
-        .email('Digite um e-mail válido')
-        .required('O e-mail é obrigatório'),
-    password: Yup.string()
-        .min(8, 'A senha deve conter no mínimo 8 caracteres')
-        .required('A senha é obrigatória'),
-});
+// const schema = Yup.object().shape({
+//     email: Yup.string()
+//         .email('Digite um e-mail válido')
+//         .required('O e-mail é obrigatório'),
+//     password: Yup.string()
+//         .min(8, 'A senha deve conter no mínimo 8 caracteres')
+//         .required('A senha é obrigatória'),
+// });
 
 // eslint-disable-next-line react/prop-types
 export default function Auth() {
+    // eslint-disable-next-line react/prop-types
     const dispatch = useDispatch();
 
     const handleSubmit = ({ email, password }) => {
@@ -31,7 +32,7 @@ export default function Auth() {
                     Entrar
                 </button>
                 <div className="dropdown-content">
-                    <Form schema={schema} onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit}>
                         <Input
                             name="email"
                             type="email"
@@ -49,6 +50,11 @@ export default function Auth() {
                             Entrar
                         </button>
                     </Form>
+                    <input
+                        type="button"
+                        className="input__auth"
+                        value="cadastre-se"
+                    />
                 </div>
             </Wrapper>
         </>

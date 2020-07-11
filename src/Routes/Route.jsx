@@ -17,10 +17,21 @@ export default function RouteWrapper({
     if (!signed && isPrivate) return <Redirect to="/" />;
     if (signed && !isPrivate) return <Redirect to="/dashboard" />;
 
-    return <Route {...rest} render={(props) => <Component {...props} />} />;
+    const Pages = signed ? Dashboard : Home;
+
+    return (
+        <Route
+            {...rest}
+            render={(props) => (
+                <Pages>
+                    <Component {...props} />
+                </Pages>
+            )}
+        />
+    );
 }
 
-RouteWrapper.prototype = {
+RouteWrapper.prototypes = {
     isPrivate: PropTypes.bool,
     component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
 };

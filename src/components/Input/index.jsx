@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
-import './style.css';
+
+// eslint-disable-next-line import/extensions
+import { ContainerInput } from './style.jsx';
 
 // eslint-disable-next-line react/prop-types
 const Input = ({ name, ...rest }) => {
@@ -16,7 +18,7 @@ const Input = ({ name, ...rest }) => {
     }, [fieldName, registerField]);
 
     return (
-        <div className="div__ipunt">
+        <ContainerInput>
             <input
                 className="input__cadastro"
                 ref={inputRef}
@@ -35,7 +37,7 @@ const Input = ({ name, ...rest }) => {
                     {error}
                 </span>
             )}
-        </div>
+        </ContainerInput>
     );
 };
 

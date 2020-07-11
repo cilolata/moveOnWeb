@@ -49,4 +49,14 @@ export const Wrapper = styled.div`
     .dropbtn:hover {
         opacity: 0.7;
     }
+
+    .input__auth {
+        width: 100%;
+        font-size: 0.8rem;
+        padding-top: 4%;
+        color: #4e75f5;
+        border: transparent;
+        background: transparent;
+        cursor: pointer;
+    }
 `;
