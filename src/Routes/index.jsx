@@ -6,12 +6,14 @@ import Home from '../Pages/Home';
 import Cadastro from '../Pages/Cadastro';
 import Dashboard from '../Pages/Dashboard';
 
-const Routes = () => (
+export default function Routes(){
+    return (
     <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/cadastro" component={Cadastro} />
         <Route path="/dashboard" component={Dashboard} isPrivate />
     </Switch>
 );
+} 
 
-export default Routes;
+

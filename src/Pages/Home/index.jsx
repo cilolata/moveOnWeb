@@ -16,7 +16,6 @@ import product8 from '../../assets/product8.jpg';
 const Home = () => {
     return (
         <>
-            <Header />
             <section className="mainHome">
                 <div className="hero">
                     <div className="hero__heading">

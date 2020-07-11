@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
 import store from '../store';
-
 // eslint-disable-next-line react/prop-types
 export default function RouteWrapper({
     // eslint-disable-next-line react/prop-types
@@ -23,7 +22,7 @@ export default function RouteWrapper({
 
 RouteWrapper.prototype = {
     isPrivate: PropTypes.bool,
-    component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
 };
 
 RouteWrapper.defaultProps = {
