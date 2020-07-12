@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import './style.css';
 import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import CadastroInicial from '../../components/CadastroInicial';
 

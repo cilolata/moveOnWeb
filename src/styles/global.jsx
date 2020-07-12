@@ -17,7 +17,7 @@ export default createGlobalStyle`
 
 html, body, #root{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     -webKit-font-smoothing: antialiased !important;
 }
 
