@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/button-has-type */
-/* eslint-disable no-shadow */
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
@@ -22,6 +20,8 @@ function CadastroInicial(props) {
     const { handleCloseModal } = props;
 
     const handleSubmit = async (data, { reset }) => {
+        console.log(data);
+
         try {
             const schema = Yup.object().shape({
                 name: Yup.string().required('O nome é obrigatório'),
@@ -31,7 +31,10 @@ function CadastroInicial(props) {
                 password: Yup.string()
                     .min(8, 'A senha deve conter no mínimo 8 caracteres')
                     .required('A senha é obrigatória'),
-                checkbox: Yup.boolean().oneOf([true], 'Escolha uma categoria'),
+                checkbox: Yup.array()
+                    .min(1)
+                    .max(1)
+                    .required('Escolha uma opção'),
             });
 
             await schema.validate(data, {
