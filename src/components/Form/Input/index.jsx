@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
 
 // eslint-disable-next-line import/extensions
-import { ContainerInput } from './style.jsx';
+import { InputForm } from './style.jsx';
 
 // eslint-disable-next-line react/prop-types
 const Input = ({ name, ...rest }) => {
@@ -18,8 +18,8 @@ const Input = ({ name, ...rest }) => {
     }, [fieldName, registerField]);
 
     return (
-        <ContainerInput>
-            <input
+        <div>
+            <InputForm
                 className="input__cadastro"
                 ref={inputRef}
                 onFocus={clearError}
@@ -30,14 +30,14 @@ const Input = ({ name, ...rest }) => {
                 <span
                     style={{
                         color: '#f00',
-                        fontSize: '0.8rem',
-                        padding: '5px 0',
+                        fontSize: '0.7rem',
+                        padding: '2px 0',
                     }}
                 >
                     {error}
                 </span>
             )}
-        </ContainerInput>
+        </div>
     );
 };
 
