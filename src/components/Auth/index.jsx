@@ -1,6 +1,8 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-undef */
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
@@ -68,17 +70,18 @@ export default function Auth() {
                             type="password"
                             placeholder="Senha"
                             title="Senha"
-                            // eslint-disable-next-line react/jsx-no-comment-textnodes
                         />
                         <button className="btn__form" type="submit">
                             Entrar
                         </button>
                     </Form>
-                    <input
-                        type="button"
-                        className="input__auth"
-                        value="cadastre-se"
-                    />
+                    <Link to="/cadastro">
+                        <input
+                            type="button"
+                            className="input__auth"
+                            value="cadastre-se"
+                        />
+                    </Link>
                 </div>
             </Wrapper>
         </>

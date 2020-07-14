@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../Auth';
 
-// eslint-disable-next-line import/extensions
-import { HeaderContainer } from './style.jsx';
+import { HeaderContainer } from './style';
 
 const Header = () => {
     return (

@@ -1,21 +1,9 @@
 import styled from 'styled-components';
 
 export const SectionCadastro = styled.section`
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    top: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 20;
-    backface-visibility: hidden;
-
     .cadastro {
-        width: 50%;
-        padding: 1% 0 4% 0;
+        width: 100%;
+        padding: 3% 0 4% 0;
         background-color: #fff;
     }
 
@@ -48,14 +36,19 @@ export const SectionCadastro = styled.section`
 
     .btn__cadastro {
         width: 100%;
-        padding: 5%;
-        margin-top: 5%;
-        background-color: teal;
-        border: 1px solid teal;
-        color: #fff;
-        border-radius: 1px;
-        font-size: 1.2rem;
+        margin: 15px 0 0;
+        height: 44px;
+        border: 0;
+        border-radius: 4px;
+        background: #228180;
         font-weight: bold;
+        color: #fff;
+        font-size: 16px;
+        transition: background 0.2s;
+    }
+
+    .btn__cadastro:hover {
+        opacity: 0.7;
     }
 
     span {
@@ -68,6 +61,5 @@ export const SectionCadastro = styled.section`
 
     .form__intructions {
         font-size: 0.7rem;
-        color: #f00;
     }
 `;

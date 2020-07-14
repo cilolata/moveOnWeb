@@ -4,7 +4,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
 
-import { ContainerCheckbox } from './style';
+import { Container } from './style';
 
 const CheckboxInput = ({ name, options, ...rest }) => {
     const inputRefs = useRef([]);
@@ -35,22 +35,24 @@ const CheckboxInput = ({ name, options, ...rest }) => {
     }, [fieldName, registerField]);
 
     return (
-        <ContainerCheckbox>
-            {options.map((option, index) => (
-                <label htmlFor={option.id} key={option.id}>
-                    <input
-                        ref={(ref) => {
-                            inputRefs.current[index] = ref;
-                        }}
-                        onFocus={clearError}
-                        value={option.value}
-                        type="checkbox"
-                        id={option.id}
-                        {...rest}
-                    />
-                    {option.label}
-                </label>
-            ))}
+        <Container>
+            <div className="container__checkbox">
+                {options.map((option, index) => (
+                    <label htmlFor={option.id} key={option.id}>
+                        <input
+                            ref={(ref) => {
+                                inputRefs.current[index] = ref;
+                            }}
+                            onFocus={clearError}
+                            value={option.value}
+                            type="checkbox"
+                            id={option.id}
+                            {...rest}
+                        />
+                        {option.label}
+                    </label>
+                ))}
+            </div>
             {error && (
                 <span
                     style={{
@@ -62,7 +64,7 @@ const CheckboxInput = ({ name, options, ...rest }) => {
                     {error}
                 </span>
             )}
-        </ContainerCheckbox>
+        </Container>
     );
 };
 export default CheckboxInput;

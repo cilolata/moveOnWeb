@@ -12,8 +12,6 @@ import GlobalStyle from '../styles/global';
 
 import Routes from '../Routes';
 
-// eslint-disable-next-line import/extensions
-
 import store from '../store';
 
 function App() {

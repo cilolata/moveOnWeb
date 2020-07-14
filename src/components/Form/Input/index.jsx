@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
 
@@ -23,7 +24,6 @@ const Input = ({ name, ...rest }) => {
                 className="input__cadastro"
                 ref={inputRef}
                 onFocus={clearError}
-                // eslint-disable-next-line react/jsx-props-no-spreading
                 {...rest}
             />
             {error && (

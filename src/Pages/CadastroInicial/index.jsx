@@ -1,15 +1,14 @@
-/* eslint-disable react/button-has-type */
+/* eslint-disable no-shadow */
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import { IoIosClose } from 'react-icons/io';
 import { SectionCadastro } from './style';
 
-import Input from '../Form/Input';
-import CheckboxInput from '../Form/CheckboxInput';
+import Input from '../../components/Form/Input';
+import CheckboxInput from '../../components/Form/CheckboxInput';
 
-function CadastroInicial(props) {
+function CadastroInicial() {
     const formRef = useRef(null);
 
     const checkboxOptions = [
@@ -17,17 +16,11 @@ function CadastroInicial(props) {
         { id: '1', value: '1', label: 'Empresa' },
     ];
 
-    const { handleCloseModal } = props;
-
     const handleSubmit = async (data, { reset }) => {
-        console.log(data);
-
         try {
             const schema = Yup.object().shape({
                 name: Yup.string().required('O nome é obrigatório'),
-                email: Yup.string()
-                    .email('Digite um e-mail válido')
-                    .required('O e-mail é obrigatório'),
+                email: Yup.string().required('O e-mail é obrigatório'),
                 password: Yup.string()
                     .min(8, 'A senha deve conter no mínimo 8 caracteres')
                     .required('A senha é obrigatória'),
@@ -60,9 +53,6 @@ function CadastroInicial(props) {
     return (
         <SectionCadastro>
             <div className="cadastro">
-                <button className="btn__close" onClick={handleCloseModal}>
-                    <IoIosClose className="icon__close" />
-                </button>
                 <h1 className="heading__cadastro">Faça o seu cadastro</h1>
                 <p className="p__cadastro">ou entre com</p>
                 <div className="container__cadastro">

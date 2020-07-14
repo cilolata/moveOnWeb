@@ -1,9 +1,10 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import './style.css';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
 import Footer from '../../components/Footer';
-import CadastroInicial from '../../components/CadastroInicial';
+
+import { MainHome } from './style';
 
 import product1 from '../../assets/product1.jpg';
 import product2 from '../../assets/product2.jpg';
@@ -15,35 +16,17 @@ import product7 from '../../assets/product7.jpg';
 import product8 from '../../assets/product8.jpg';
 
 function Home() {
-    const [IsModalVisible, setIsModalVisible] = useState(false);
-
-    // eslint-disable-next-line no-unused-vars
-    const handleShowModal = (event) => {
-        setIsModalVisible(true);
-    };
-
-    const handleCloseModal = (event) => {
-        setIsModalVisible(false);
-    };
-
     return (
         <>
-            <section className="mainHome">
+            <MainHome>
                 <div className="hero">
                     <div className="hero__heading">
                         <h1>Lorem ipsum dolor sit amet</h1>
-                        <button
-                            className="hero__register"
-                            type="button"
-                            onClick={handleShowModal}
-                        >
-                            Cadastre-se
-                        </button>
-                        {IsModalVisible && (
-                            <CadastroInicial
-                                handleCloseModal={handleCloseModal}
-                            />
-                        )}
+                        <Link to="/cadastro">
+                            <button className="hero__register" type="button">
+                                Cadastre-se
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
@@ -470,7 +453,7 @@ function Home() {
                         </div>
                     </div>
                 </section>
-            </section>
+            </MainHome>
             <Footer />
         </>
     );
