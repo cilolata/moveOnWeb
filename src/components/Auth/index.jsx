@@ -1,24 +1,23 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-shadow */
 /* eslint-disable no-undef */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useDispatch } from 'react-redux';
+
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
-import Input from '../Form/Input';
 import { signInRequest } from '../../store/modules/auth/actions';
+import Input from '../Form/Input';
 
 import { Wrapper } from './style';
 
 // eslint-disable-next-line react/prop-types
 export default function Auth() {
     const formRef = useRef(null);
-
-    // eslint-disable-next-line react/prop-types
     const dispatch = useDispatch();
 
-    const handleSubmit = async (data, { email, password }) => {
+    async function handleSubmit({ email, password }) {
         dispatch(signInRequest(email, password));
 
         try {
@@ -31,7 +30,7 @@ export default function Auth() {
                     .required('A senha é obrigatória'),
             });
 
-            await schema.validate(data, {
+            await schema.validate(email, password, {
                 abortEarly: false,
             });
 
@@ -49,7 +48,7 @@ export default function Auth() {
                 formRef.current.setErrors(errorMessages);
             }
         }
-    };
+    }
 
     return (
         <>
@@ -71,7 +70,11 @@ export default function Auth() {
                             placeholder="Senha"
                             title="Senha"
                         />
-                        <button className="btn__form" type="submit">
+                        <button
+                            className="btn__form"
+                            type="submit"
+                            // onClick={handleLogin}
+                        >
                             Entrar
                         </button>
                     </Form>
