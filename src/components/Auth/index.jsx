@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
@@ -16,6 +16,7 @@ import { Wrapper } from './style';
 export default function Auth() {
     const formRef = useRef(null);
     const dispatch = useDispatch();
+    const loading = useSelector((state) => state.auth.loading);
 
     async function handleSubmit({ email, password }) {
         dispatch(signInRequest(email, password));
@@ -70,12 +71,8 @@ export default function Auth() {
                             placeholder="Senha"
                             title="Senha"
                         />
-                        <button
-                            className="btn__form"
-                            type="submit"
-                            // onClick={handleLogin}
-                        >
-                            Entrar
+                        <button className="btn__form" type="submit">
+                            {loading ? 'Carregando...' : 'Entrar'}
                         </button>
                     </Form>
                     <Link to="/cadastro">

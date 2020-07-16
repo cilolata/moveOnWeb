@@ -1,5 +1,6 @@
 /* eslint-disable no-shadow */
 import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
@@ -7,16 +8,24 @@ import { SectionCadastro } from './style';
 
 import Input from '../../components/Form/Input';
 import CheckboxInput from '../../components/Form/CheckboxInput';
+import { signUpRequest } from '../../store/modules/auth/actions';
 
 function CadastroInicial() {
     const formRef = useRef(null);
+    const dispatch = useDispatch();
 
     const checkboxOptions = [
         { id: '0', value: '0', label: 'Usuário' },
         { id: '1', value: '1', label: 'Empresa' },
     ];
 
-    const handleSubmit = async (data, { reset }) => {
+    const handleSubmit = async (
+        { name, email, password, checkbox },
+        { reset }
+    ) => {
+        const type = checkbox[0];
+
+        dispatch(signUpRequest(name, email, password, type));
         try {
             const schema = Yup.object().shape({
                 name: Yup.string().required('O nome é obrigatório'),
@@ -30,7 +39,7 @@ function CadastroInicial() {
                     .required('Escolha uma opção'),
             });
 
-            await schema.validate(data, {
+            await schema.validate(name, password, email, checkbox, {
                 abortEarly: false,
             });
 
