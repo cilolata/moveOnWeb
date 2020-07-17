@@ -6,6 +6,7 @@ const INITIAL_STATE = {
     signed: false,
     loading: false,
 };
+
 function auth(state = INITIAL_STATE, action) {
     switch (action.type) {
         case '@auth/SIGN_IN_REQUEST':
@@ -23,6 +24,12 @@ function auth(state = INITIAL_STATE, action) {
         case '@auth/SIGN_IN_FAILURE':
             return produce(state, (draft) => {
                 draft.loading = false;
+            });
+
+        case '@auth/SIGN_OUT':
+            return produce(state, (draft) => {
+                draft.token = null;
+                draft.signed = false;
             });
 
         default:

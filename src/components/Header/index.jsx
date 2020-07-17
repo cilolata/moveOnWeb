@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Auth from '../Auth';
+import HeaderLogado from '../HeaderLogado';
 
 import { HeaderContainer } from './style';
 
 const Header = () => {
+    const logado = useSelector((state) => state.auth.signed);
+    console.log(logado);
+
     return (
         <HeaderContainer>
             <div className="header__container--brand">
@@ -31,7 +36,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <Auth />
+            {logado ? <HeaderLogado /> : <Auth />}
         </HeaderContainer>
     );
 };

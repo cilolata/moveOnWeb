@@ -16,16 +16,14 @@ export function* signIn({ payload }) {
         });
 
         const { token, user } = response.data;
-
-        // if (user.type === '') {
-        //     toast.error('empresa');
-        //     return;
-        // }
-
         api.defaults.headers.Authorization = `Bearer ${token}`;
-
         yield put(signInSuccess(token, user));
-        history.push('/dashboard');
+
+        if (user.type === '0') {
+            history.push('/dashboardcliente');
+        } else {
+            history.push('/dashboardempresa');
+        }
     } catch (error) {
         toast.error('email e/ou senha inválidos');
         yield put(signFailure());
@@ -61,8 +59,13 @@ export function setToken({ payload }) {
     }
 }
 
+export function signOut() {
+    history.push('/');
+}
+
 export default all([
     takeLatest('persist/REHYDRATE', setToken),
     takeLatest('@auth/SIGN_IN_REQUEST', signIn),
     takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+    takeLatest('@auth/SIGN_OUT', signOut),
 ]);

@@ -2,14 +2,14 @@ import React from 'react';
 
 // eslint-disable-next-line import/extensions
 import { ContainerDashboard } from './style';
-import product1 from '../../assets/product1.jpg';
-import product3 from '../../assets/product3.jpg';
-import product4 from '../../assets/product4.jpg';
-import product5 from '../../assets/product5.jpg';
-import product6 from '../../assets/product6.jpg';
-import product8 from '../../assets/product8.jpg';
+import product1 from '../../../assets/product1.jpg';
+import product3 from '../../../assets/product3.jpg';
+import product4 from '../../../assets/product4.jpg';
+import product5 from '../../../assets/product5.jpg';
+import product6 from '../../../assets/product6.jpg';
+import product8 from '../../../assets/product8.jpg';
 
-function Dashboard() {
+function DashboardCliente() {
     return (
         <ContainerDashboard>
             <h1>Categorias em destaque</h1>
@@ -43,4 +43,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default DashboardCliente;
