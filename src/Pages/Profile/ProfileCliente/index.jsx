@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +12,7 @@ import ProfileEmpresa from '../ProfileEmpresa';
 
 function ProfileCliente() {
     const profile = useSelector((state) => state.user);
-    const { type } = profile.profile;
+    const { type, email } = profile.profile;
     const formRef = useRef(null);
     const dispatch = useDispatch();
 

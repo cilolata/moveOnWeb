@@ -11,7 +11,7 @@ import { ContainerEmpresa } from './style';
 function ProfileEmpresa() {
     const formRef = useRef(null);
 
-    const handleSubmit = async (data) => {
+    const handleSubmit = async (data, { reset }) => {
         try {
             const schema = Yup.object().shape({
                 name: Yup.string().required('O nome é obrigatório'),
@@ -46,7 +46,6 @@ function ProfileEmpresa() {
     };
     return (
         <ContainerEmpresa>
-            <h2>Cadastro</h2>
             <Form
                 className="form__completo"
                 onSubmit={handleSubmit}

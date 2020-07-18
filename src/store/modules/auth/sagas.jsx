@@ -17,13 +17,9 @@ export function* signIn({ payload }) {
 
         const { token, user } = response.data;
         api.defaults.headers.Authorization = `Bearer ${token}`;
-        yield put(signInSuccess(token, user));
 
-        if (user.type === '0') {
-            history.push('/dashboardcliente');
-        } else {
-            history.push('/dashboardempresa');
-        }
+        yield put(signInSuccess(token, user));
+        history.push('/dashboard');
     } catch (error) {
         toast.error('email e/ou senha inválidos');
         yield put(signFailure());

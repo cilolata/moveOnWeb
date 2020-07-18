@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import DashboardEmpresa from '../DashboardEmpresa';
 
 // eslint-disable-next-line import/extensions
 import { ContainerDashboard } from './style';
@@ -10,36 +12,46 @@ import product6 from '../../../assets/product6.jpg';
 import product8 from '../../../assets/product8.jpg';
 
 function DashboardCliente() {
+    const dashboard = useSelector((state) => state.user);
+
+    const { type } = dashboard.profile;
+
     return (
-        <ContainerDashboard>
-            <h1>Categorias em destaque</h1>
-            <div className="categorias">
-                <div className="categorias__destaque">
-                    <img src={product1} alt="" />
-                    <h3>Elipticos</h3>
-                </div>
-                <div className="categorias__destaque">
-                    <img src={product8} alt="" />
-                    <h3>Acessórios</h3>
-                </div>
-                <div className="categorias__destaque">
-                    <img src={product3} alt="" />
-                    <h3>Estações</h3>
-                </div>
-                <div className="categorias__destaque">
-                    <img src={product4} alt="" />
-                    <h3>Roupas</h3>
-                </div>
-                <div className="categorias__destaque">
-                    <img src={product5} alt="" />
-                    <h3>Esteiras</h3>
-                </div>
-                <div className="categorias__destaque">
-                    <img src={product6} alt="" />
-                    <h3>Pesos</h3>
-                </div>
-            </div>
-        </ContainerDashboard>
+        <>
+            {type === '0' ? (
+                <ContainerDashboard>
+                    <h1>Categorias em destaque</h1>
+                    <div className="categorias">
+                        <div className="categorias__destaque">
+                            <img src={product1} alt="" />
+                            <h3>Elipticos</h3>
+                        </div>
+                        <div className="categorias__destaque">
+                            <img src={product8} alt="" />
+                            <h3>Acessórios</h3>
+                        </div>
+                        <div className="categorias__destaque">
+                            <img src={product3} alt="" />
+                            <h3>Estações</h3>
+                        </div>
+                        <div className="categorias__destaque">
+                            <img src={product4} alt="" />
+                            <h3>Roupas</h3>
+                        </div>
+                        <div className="categorias__destaque">
+                            <img src={product5} alt="" />
+                            <h3>Esteiras</h3>
+                        </div>
+                        <div className="categorias__destaque">
+                            <img src={product6} alt="" />
+                            <h3>Pesos</h3>
+                        </div>
+                    </div>
+                </ContainerDashboard>
+            ) : (
+                <DashboardEmpresa />
+            )}
+        </>
     );
 }
 
