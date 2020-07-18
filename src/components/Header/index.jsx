@@ -9,7 +9,6 @@ import { HeaderContainer } from './style';
 
 const Header = () => {
     const logado = useSelector((state) => state.auth.signed);
-    console.log(logado);
 
     return (
         <HeaderContainer>

@@ -12,7 +12,7 @@ function user(state = INITIAL_STATE, action) {
                 draft.profile = action.payload.user;
             });
 
-        case '@auth/UPDATE_PROFILE_SUCCESS':
+        case '@auth/UPDATE_PROFILE':
             return produce(state, (draft) => {
                 draft.profile = action.payload.profile;
             });

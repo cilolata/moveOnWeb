@@ -7,15 +7,13 @@ import DashboardCliente from '../Pages/Dashboard/DashboardCliente';
 import DashboardEmpresa from '../Pages/Dashboard/DashboardEmpresa';
 import CadastroInicial from '../Pages/CadastroInicial';
 import ProfileCliente from '../Pages/Profile/ProfileCliente';
-import ProfileEmpresa from '../Pages/Profile/ProfileEmpresa';
 
 export default function Routes() {
     return (
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/cadastro" component={CadastroInicial} />
-            <Route path="/profile/:name" component={ProfileCliente} />
-            <Route path="/profileempresa/:name" component={ProfileEmpresa} />
+            <Route path="/profile/:id" component={ProfileCliente} isPrivate />
             <Route
                 path="/dashboardcliente"
                 component={DashboardCliente}
