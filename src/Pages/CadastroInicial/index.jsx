@@ -28,7 +28,6 @@ function CadastroInicial() {
         dispatch(signUpRequest(name, email, password, type));
         try {
             const schema = Yup.object().shape({
-                name: Yup.string().required('O nome é obrigatório'),
                 email: Yup.string().required('O e-mail é obrigatório'),
                 password: Yup.string()
                     .min(8, 'A senha deve conter no mínimo 8 caracteres')
@@ -75,7 +74,6 @@ function CadastroInicial() {
                             name="checkbox"
                             options={checkboxOptions}
                         />
-                        <Input name="name" placeholder="Nome" title="Nome" />
                         <Input name="email" placeholder="Email" title="Email" />
                         <Input
                             type="password"

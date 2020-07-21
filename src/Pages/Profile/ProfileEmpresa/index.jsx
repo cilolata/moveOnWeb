@@ -3,25 +3,27 @@
 /* eslint-disable no-undef */
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
+
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
 import Input from '../../../components/Form/Input';
+import { profileRegisterEmpresa } from '../../../store/modules/profileEmpresa/actions';
 
 import { ContainerEmpresa } from './style';
 
 function ProfileEmpresa() {
     const formRef = useRef(null);
+    const dispatch = useDispatch();
 
     const handleSubmit = async (data, { reset }) => {
+        dispatch(profileRegisterEmpresa(data));
         try {
             const schema = Yup.object().shape({
                 name: Yup.string().required('O nome é obrigatório'),
-                razaoSocial: Yup.string().required(
+                razao_social: Yup.string().required(
                     'A razão social é obrigatória'
                 ),
-                cnpj: Yup.number()
-                    .min(14)
-                    .max(14)
-                    .required('O cnpj é obrigatório'),
+                cnpj: Yup.number().min(14).required('O cnpj é obrigatório'),
                 email: Yup.string().required('O e-mail é obrigatório'),
             });
 
@@ -71,7 +73,7 @@ function ProfileEmpresa() {
                     </div>
                     <div className="div__input">
                         <Input
-                            name="razaoSocial"
+                            name="razao_social"
                             placeholder="Razão Social"
                             title="razão social"
                             type="text"
@@ -89,19 +91,6 @@ function ProfileEmpresa() {
                             name="cnpj"
                             placeholder="xxxxxxxxxxxxxx"
                             title="CNPJ"
-                        />
-                    </div>
-                </div>
-                <div className="div__field">
-                    <div className="div__label">
-                        <label>E-mail: </label>
-                    </div>
-                    <div className="div__input">
-                        <Input
-                            type="email"
-                            name="email"
-                            placeholder="E-mail"
-                            title="E-mail"
                         />
                     </div>
                 </div>

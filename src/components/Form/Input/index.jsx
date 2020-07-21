@@ -1,11 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect } from 'react';
 import { useField } from '@unform/core';
 
-// eslint-disable-next-line import/extensions
-import { InputForm } from './style.jsx';
+import { InputForm } from './style';
 
-// eslint-disable-next-line react/prop-types
 const Input = ({ name, ...rest }) => {
     const inputRef = useRef(null);
     const { fieldName, registerField, error, clearError } = useField(name);

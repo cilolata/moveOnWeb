@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,7 +16,7 @@ function HeaderLogado() {
 
     return (
         <ContainerHeader>
-            <strong>Nome</strong>
+            <strong></strong>
             {type === 0 ? (
                 <Link to={`/profile/${id}`}>Meu perfil</Link>
             ) : (

@@ -2,20 +2,20 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-    profile: null,
+    registerCliente: null,
     name: null,
 };
 
-function user(state = INITIAL_STATE, action) {
+function profileCliente(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case '@auth/SIGN_IN_SUCCESS':
+        case '@user/PROFILE_REGISTER_CLIENTE':
             return produce(state, (draft) => {
-                draft.profile = action.payload.user;
+                draft.registerCliente = action.payload;
             });
 
         case '@user/REGISTER_CLIENTE_SUCCESS':
             return produce(state, (draft) => {
-                draft.profile = action.payload.name;
+                draft.name = action.payload.name;
             });
 
         default:
@@ -23,4 +23,4 @@ function user(state = INITIAL_STATE, action) {
     }
 }
 
-export default user;
+export default profileCliente;

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import history from '../../../services/history';
@@ -28,10 +27,9 @@ export function* signIn({ payload }) {
 
 export function* signUp({ payload }) {
     try {
-        const { name, email, password, type } = payload;
+        const { email, password, type } = payload;
 
         yield call(api.post, 'users', {
-            name,
             email,
             password,
             type,

@@ -6,6 +6,7 @@ import Home from '../Pages/Home';
 import DashboardCliente from '../Pages/Dashboard/DashboardCliente';
 import CadastroInicial from '../Pages/CadastroInicial';
 import ProfileCliente from '../Pages/Profile/ProfileCliente';
+import PainelControle from '../Pages/PainelControle';
 
 export default function Routes() {
     return (
@@ -13,11 +14,8 @@ export default function Routes() {
             <Route exact path="/" component={Home} />
             <Route path="/cadastro" component={CadastroInicial} />
             <Route path="/profile/:id" component={ProfileCliente} isPrivate />
-            <Route
-                path="/dashboard"
-                component={DashboardCliente}
-                isPrivate
-            />
+            <Route path="/dashboard" component={DashboardCliente} isPrivate />
+            <Route path="/painel/:id" component={PainelControle} isPrivate />
         </Switch>
     );
 }

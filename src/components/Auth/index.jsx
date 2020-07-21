@@ -12,7 +12,6 @@ import Input from '../Form/Input';
 
 import { Wrapper } from './style';
 
-// eslint-disable-next-line react/prop-types
 export default function Auth() {
     const formRef = useRef(null);
     const dispatch = useDispatch();

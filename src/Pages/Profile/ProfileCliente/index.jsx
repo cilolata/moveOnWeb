@@ -5,19 +5,20 @@ import { Form } from '@unform/web';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import Input from '../../../components/Form/Input';
-import { update } from '../../../store/modules/user/actions';
+import { profileRegisterCliente } from '../../../store/modules/profileCliente/actions';
 
 import { ProfileContainer } from './style';
 import ProfileEmpresa from '../ProfileEmpresa';
 
 function ProfileCliente() {
     const profile = useSelector((state) => state.user);
-    const { type, email } = profile.profile;
+    const { type } = profile.profile;
     const formRef = useRef(null);
     const dispatch = useDispatch();
 
     const handleSubmit = async (data, { reset }) => {
-        dispatch(update(data));
+        dispatch(profileRegisterCliente(data));
+
         try {
             const schema = Yup.object().shape({
                 name: Yup.string().required('O nome é obrigatório'),
@@ -65,7 +66,7 @@ function ProfileCliente() {
                         <div className="div__input">
                             <Input
                                 type="text"
-                                name="name"
+                                name="nome"
                                 placeholder="Nome"
                                 title="Nome"
                             />
@@ -106,22 +107,9 @@ function ProfileCliente() {
                         <div className="div__input">
                             <Input
                                 type="Date"
-                                name="date"
+                                name="data_nascimento"
                                 placeholder="Data de Nascimento"
                                 title="Data de Nascimento"
-                            />
-                        </div>
-                    </div>
-                    <div className="div__field">
-                        <div className="div__label">
-                            <label>E-mail: </label>
-                        </div>
-                        <div className="div__input">
-                            <Input
-                                type="email"
-                                name="email"
-                                placeholder="E-mail"
-                                title="E-mail"
                             />
                         </div>
                     </div>
