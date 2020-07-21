@@ -7,7 +7,13 @@ import { InputForm } from './style';
 
 const Input = ({ name, ...rest }) => {
     const inputRef = useRef(null);
-    const { fieldName, registerField, error, clearError } = useField(name);
+    const {
+        fieldName,
+        registerField,
+        error,
+        clearError,
+        defaultValue,
+    } = useField(name);
 
     useEffect(() => {
         registerField({
@@ -23,6 +29,7 @@ const Input = ({ name, ...rest }) => {
                 className="input__cadastro"
                 ref={inputRef}
                 onFocus={clearError}
+                defaultValue={defaultValue}
                 {...rest}
             />
             {error && (

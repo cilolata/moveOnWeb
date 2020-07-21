@@ -27,9 +27,10 @@ export function* signIn({ payload }) {
 
 export function* signUp({ payload }) {
     try {
-        const { email, password, type } = payload;
+        const { nome, email, password, type } = payload;
 
         yield call(api.post, 'users', {
+            nome,
             email,
             password,
             type,

@@ -5,21 +5,27 @@ import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 
 import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../../components/Form/Input';
 import { profileRegisterEmpresa } from '../../../store/modules/profileEmpresa/actions';
 
 import { ContainerEmpresa } from './style';
 
 function ProfileEmpresa() {
+    const profile = useSelector((state) => state.user);
+    const { nome } = profile.profile;
     const formRef = useRef(null);
     const dispatch = useDispatch();
+
+    const initialData = {
+        nome,
+    };
 
     const handleSubmit = async (data, { reset }) => {
         dispatch(profileRegisterEmpresa(data));
         try {
             const schema = Yup.object().shape({
-                name: Yup.string().required('O nome é obrigatório'),
+                nome: Yup.string().required('O nome é obrigatório'),
                 razao_social: Yup.string().required(
                     'A razão social é obrigatória'
                 ),
@@ -51,6 +57,7 @@ function ProfileEmpresa() {
             <Form
                 className="form__completo"
                 onSubmit={handleSubmit}
+                initialData={initialData}
                 ref={formRef}
             >
                 <div className="div__field">
@@ -60,7 +67,7 @@ function ProfileEmpresa() {
                     <div className="div__input">
                         <Input
                             type="text"
-                            name="name"
+                            name="nome"
                             placeholder="Nome"
                             title="Nome"
                         />

@@ -3,7 +3,6 @@ import produce from 'immer';
 
 const INITIAL_STATE = {
     profile: null,
-    name: null,
 };
 
 function user(state = INITIAL_STATE, action) {

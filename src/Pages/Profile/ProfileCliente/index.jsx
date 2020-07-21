@@ -12,9 +12,13 @@ import ProfileEmpresa from '../ProfileEmpresa';
 
 function ProfileCliente() {
     const profile = useSelector((state) => state.user);
-    const { type } = profile.profile;
+    const { type, nome } = profile.profile;
     const formRef = useRef(null);
     const dispatch = useDispatch();
+
+    const initialData = {
+        nome,
+    };
 
     const handleSubmit = async (data, { reset }) => {
         dispatch(profileRegisterCliente(data));
@@ -57,6 +61,7 @@ function ProfileCliente() {
                 <Form
                     className="form__completo"
                     onSubmit={handleSubmit}
+                    initialData={initialData}
                     ref={formRef}
                 >
                     <div className="div__field">

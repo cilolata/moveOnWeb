@@ -5,10 +5,10 @@ import { toast } from 'react-toastify';
 import api from '../../../services/api';
 
 export function* profileEmpresa({ payload }) {
-    const { name, razao_social, cnpj } = payload.data;
+    const { nome, razao_social, cnpj } = payload.data;
     try {
         yield call(api.post, 'empresas', {
-            nome_fantasia: name,
+            nome_fantasia: nome,
             razao_social,
             cnpj,
         });

@@ -20,14 +20,15 @@ function CadastroInicial() {
     ];
 
     const handleSubmit = async (
-        { name, email, password, checkbox },
+        { nome, email, password, checkbox },
         { reset }
     ) => {
         const type = checkbox[0];
 
-        dispatch(signUpRequest(name, email, password, type));
+        dispatch(signUpRequest(nome, email, password, type));
         try {
             const schema = Yup.object().shape({
+                nome: Yup.string().required('O nome é obrigatório'),
                 email: Yup.string().required('O e-mail é obrigatório'),
                 password: Yup.string()
                     .min(8, 'A senha deve conter no mínimo 8 caracteres')
@@ -38,7 +39,7 @@ function CadastroInicial() {
                     .required('Escolha uma opção'),
             });
 
-            await schema.validate(name, password, email, checkbox, {
+            await schema.validate(password, email, checkbox, {
                 abortEarly: false,
             });
 
@@ -74,6 +75,7 @@ function CadastroInicial() {
                             name="checkbox"
                             options={checkboxOptions}
                         />
+                        <Input name="nome" placeholder="Nome" title="nome" />
                         <Input name="email" placeholder="Email" title="Email" />
                         <Input
                             type="password"

@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
 import Footer from '../../components/Footer';
+import DashboardCliente from '../Dashboard/DashboardCliente';
 
 import { MainHome } from './style';
 
@@ -16,445 +18,483 @@ import product7 from '../../assets/product7.jpg';
 import product8 from '../../assets/product8.jpg';
 
 function Home() {
+    const logado = useSelector((state) => state.auth.signed);
+
     return (
         <>
-            <MainHome>
-                <div className="hero">
-                    <div className="hero__heading">
-                        <h1>Lorem ipsum dolor sit amet</h1>
-                        <Link to="/cadastro">
-                            <button className="hero__register" type="button">
-                                Cadastre-se
-                            </button>
-                        </Link>
-                    </div>
-                </div>
+            {!logado ? (
+                <>
+                    <MainHome>
+                        <div className="hero">
+                            <div className="hero__heading">
+                                <h1>Lorem ipsum dolor sit amet</h1>
+                                <Link to="/cadastro">
+                                    <button
+                                        className="hero__register"
+                                        type="button"
+                                    >
+                                        Cadastre-se
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+                        <section className="price__table">
+                            <div className="price__table-content">
+                                <div className="price__table--img">
+                                    <div className="price__table--text">
+                                        <h3>New Products</h3>
+                                        <h2>Sport Collection</h2>
+                                        <p>
+                                            Phasellus molestie magna non est
+                                            bibendum non venenatis nisl tempor
+                                            lorem ipsum dolor.
+                                        </p>
+                                        <a
+                                            className="price__table--link"
+                                            href="#"
+                                        >
+                                            <span>Shop Now</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="price__table-content">
+                                <div className="price__table--img">
+                                    <div className="price__table--text">
+                                        <h3>New Products</h3>
+                                        <h2>Sport Collection</h2>
+                                        <p>
+                                            Phasellus molestie magna non est
+                                            bibendum non venenatis nisl tempor
+                                            lorem ipsum dolor.
+                                        </p>
+                                        <a
+                                            className="price__table--link"
+                                            href="#"
+                                        >
+                                            <span>Shop Now</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="price__table-content">
+                                <div className="price__table--img">
+                                    <div className="price__table--text">
+                                        <h3>New Products</h3>
+                                        <h2>Sport Collection</h2>
+                                        <p>
+                                            Phasellus molestie magna non est
+                                            bibendum non venenatis nisl tempor
+                                            lorem ipsum dolor.
+                                        </p>
+                                        <a
+                                            className="price__table--link"
+                                            href="#"
+                                        >
+                                            <span>Shop Now</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-                <section className="price__table">
-                    <div className="price__table-content">
-                        <div className="price__table--img">
-                            <div className="price__table--text">
-                                <h3>New Products</h3>
-                                <h2>Sport Collection</h2>
-                                <p>
-                                    Phasellus molestie magna non est bibendum
-                                    non venenatis nisl tempor lorem ipsum dolor.
-                                </p>
-                                <a className="price__table--link" href="#">
-                                    <span>Shop Now</span>
-                                </a>
+                        <section className="new__product">
+                            <div className="title__name">
+                                <h4>New Products</h4>
                             </div>
-                        </div>
-                    </div>
-                    <div className="price__table-content">
-                        <div className="price__table--img">
-                            <div className="price__table--text">
-                                <h3>New Products</h3>
-                                <h2>Sport Collection</h2>
-                                <p>
-                                    Phasellus molestie magna non est bibendum
-                                    non venenatis nisl tempor lorem ipsum dolor.
-                                </p>
-                                <a className="price__table--link" href="#">
-                                    <span>Shop Now</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="price__table-content">
-                        <div className="price__table--img">
-                            <div className="price__table--text">
-                                <h3>New Products</h3>
-                                <h2>Sport Collection</h2>
-                                <p>
-                                    Phasellus molestie magna non est bibendum
-                                    non venenatis nisl tempor lorem ipsum dolor.
-                                </p>
-                                <a className="price__table--link" href="#">
-                                    <span>Shop Now</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="new__product">
-                    <div className="title__name">
-                        <h4>New Products</h4>
-                    </div>
-                    <div className="products__container">
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product1} alt="" />
-                                    </a>
-                                </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
-                                    </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
-                                    </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
+                            <div className="products__container">
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product1} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
                                                 <a href="#">
-                                                    <FaInfo />
+                                                    Octane Deluxe Console
                                                 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product2} alt="" />
-                                    </a>
-                                </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
-                                    </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
-                                    </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product2} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
                                                 <a href="#">
-                                                    <FaInfo />
+                                                    Octane Deluxe Console
                                                 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product3} alt="" />
-                                    </a>
-                                </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
-                                    </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
-                                    </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <FaInfo />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product4} alt="" />
-                                    </a>
-                                </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
-                                    </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
-                                    </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product3} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
                                                 <a href="#">
-                                                    <FaInfo />
+                                                    Octane Deluxe Console
                                                 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product5} alt="" />
-                                    </a>
-                                </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
-                                    </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
-                                    </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <FaInfo />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product6} alt="" />
-                                    </a>
-                                </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
-                                    </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
-                                    </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product4} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
                                                 <a href="#">
-                                                    <FaInfo />
+                                                    Octane Deluxe Console
                                                 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product7} alt="" />
-                                    </a>
-                                </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
-                                    </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
-                                    </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <FaInfo />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="product__wrapper">
-                            <div className="product__content">
-                                <div className="product__image">
-                                    <a href="#">
-                                        <img src={product8} alt="" />
-                                    </a>
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product5} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
+                                                <a href="#">
+                                                    Octane Deluxe Console
+                                                </a>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="info__products">
-                                    <div className="product__name">
-                                        <a href="#">Octane Deluxe Console</a>
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product6} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
+                                                <a href="#">
+                                                    Octane Deluxe Console
+                                                </a>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="price__box">
-                                        <span className="special__price">
-                                            $200.60
-                                        </span>
-                                        <span className="old__price">
-                                            $227.96
-                                        </span>
+                                </div>
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product7} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
+                                                <a href="#">
+                                                    Octane Deluxe Console
+                                                </a>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="actions">
-                                        <ul>
-                                            <li>
+                                </div>
+                                <div className="product__wrapper">
+                                    <div className="product__content">
+                                        <div className="product__image">
+                                            <a href="#">
+                                                <img src={product8} alt="" />
+                                            </a>
+                                        </div>
+                                        <div className="info__products">
+                                            <div className="product__name">
                                                 <a href="#">
-                                                    <FaInfo />
+                                                    Octane Deluxe Console
                                                 </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaShoppingCart />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaSearch />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <FaStar />
-                                                </a>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                            <div className="price__box">
+                                                <span className="special__price">
+                                                    $200.60
+                                                </span>
+                                                <span className="old__price">
+                                                    $227.96
+                                                </span>
+                                            </div>
+                                            <div className="actions">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaInfo />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaShoppingCart />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaSearch />
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <FaStar />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-            </MainHome>
-            <Footer />
+                        </section>
+                    </MainHome>
+                    <Footer />
+                </>
+            ) : (
+                <DashboardCliente />
+            )}
         </>
     );
 }
