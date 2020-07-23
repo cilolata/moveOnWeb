@@ -24,10 +24,15 @@ function HeaderLogado() {
             </div>
             <div className="dropdown">
                 <div className="dropdown__content">
-                    {type === 0 ? (
+                    {type === '0' ? (
                         <Link to={`/profile/${id}`}>Meu perfil</Link>
                     ) : (
-                        <Link to={`/profile/${id}`}>Meu perfil</Link>
+                        <>
+                            <Link to={`/profile/${id}`}>Meu perfil</Link>
+                            <Link to={`/painelcontrole/${nome}`}>
+                                Painel de Controle
+                            </Link>
+                        </>
                     )}
                     <button type="button" onClick={handleSignOut}>
                         Sair

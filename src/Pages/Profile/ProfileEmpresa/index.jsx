@@ -13,12 +13,13 @@ import { ContainerEmpresa } from './style';
 
 function ProfileEmpresa() {
     const profile = useSelector((state) => state.user);
-    const { nome } = profile.profile;
+    const { nome, id } = profile.profile;
     const formRef = useRef(null);
     const dispatch = useDispatch();
 
     const initialData = {
         nome,
+        id,
     };
 
     const handleSubmit = async (data, { reset }) => {
@@ -101,6 +102,7 @@ function ProfileEmpresa() {
                         />
                     </div>
                 </div>
+                <Input type="hidden" name="id" />
                 <button className="btn__form" type="submit">
                     Salvar
                 </button>

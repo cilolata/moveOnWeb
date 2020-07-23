@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaInfo, FaShoppingCart, FaSearch, FaStar } from 'react-icons/fa';
 import Footer from '../../components/Footer';
-import DashboardCliente from '../Dashboard/DashboardCliente';
+import Dashboard from '../Dashboard';
 
 import { MainHome } from './style';
 
@@ -493,7 +493,7 @@ function Home() {
                     <Footer />
                 </>
             ) : (
-                <DashboardCliente />
+                <Dashboard />
             )}
         </>
     );

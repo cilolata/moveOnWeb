@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-shadow */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useRef } from 'react';
@@ -20,8 +21,14 @@ function ProfileCliente() {
         nome,
     };
 
-    const handleSubmit = async (data, { reset }) => {
-        dispatch(profileRegisterCliente(data));
+    const handleSubmit = async (
+        { nome, sobrenome, cpf, data_nascimento },
+        { reset }
+    ) => {
+        const dataNascimento = new Date(data_nascimento).toLocaleDateString(
+            'pt-BR'
+        );
+        dispatch(profileRegisterCliente(nome, sobrenome, cpf, dataNascimento));
 
         try {
             const schema = Yup.object().shape({
@@ -35,7 +42,7 @@ function ProfileCliente() {
                 email: Yup.string().required('O e-mail é obrigatório'),
             });
 
-            await schema.validate(data, {
+            await schema.validate(nome, sobrenome, cpf, data_nascimento, {
                 abortEarly: false,
             });
 

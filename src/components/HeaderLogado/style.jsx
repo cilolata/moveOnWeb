@@ -19,7 +19,7 @@ export const ContainerHeader = styled.div`
     .dropdown {
         display: none;
         position: absolute;
-        min-width: 150px;
+        min-width: 200px;
         padding: 15%;
         margin-left: -30%;
         background-color: #fff;
