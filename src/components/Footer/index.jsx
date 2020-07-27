@@ -18,32 +18,14 @@ const Footer = () => {
                 <div className="copy__right">
                     <div className="footer__right">
                         <div className="line1">
-                            Copyright &copy; 2020{' '}
+                            Copyright &copy; 2020
                             <Link to="/"> MoveOn Fitness</Link>
                         </div>
                     </div>
-                    <div className="social__icon">
-                        <a href="#">
-                            <FaFacebook />
-                        </a>
-                        <a href="#">
-                            <FaTwitter />
-                        </a>
-                        <a href="#">
-                            <FaInstagram />
-                        </a>
-                    </div>
-                </div>
-                <div className="footer__infos">
-                    <div className="footer__title">
-                        <h4>Our location</h4>
-                    </div>
-                    <div className="address">
-                        <p>
-                            Room 1214&nbsp; #187 Tay Son Building, Dong Da Distr
-                        </p>
-                        <p>Ha Noi, Vietnam Phone : +84 4 22414757</p>
-                        <p>Email : inwavethemes@gmail.com </p>
+                    <div className="social__icon--container">
+                        <FaFacebook className="social__icon" />
+                        <FaTwitter className="social__icon" />
+                        <FaInstagram className="social__icon" />
                     </div>
                 </div>
                 <div className="send__mail">
@@ -51,10 +33,6 @@ const Footer = () => {
                         <h4>Keep in touch</h4>
                     </div>
                     <form name="" method="post" id="send__mail">
-                        <div className="info">
-                            Lorem ipsum dolor sit amet, consectetur adi
-                            sollicitud ante tellus ornare mi, et mollis
-                        </div>
                         <div className="email">
                             <input
                                 type="text"

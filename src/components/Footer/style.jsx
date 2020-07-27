@@ -5,12 +5,11 @@ export const Container = styled.div`
     display: flex;
     background: none repeat scroll 0 0 #0f0f0f;
     background-size: cover;
-    height: 30vh;
-    padding: 0 5%;
+    padding: 3% 1%;
     color: #fff;
 
     .copy__right {
-        width: 33%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -21,21 +20,19 @@ export const Container = styled.div`
         color: #fff;
     }
 
-    .social__icon {
+    .social__icon--container {
         margin-top: 3%;
     }
 
-    .social__icon a {
+    .social__icon {
         color: #fff;
         margin: 2%;
     }
-
-    .footer__infos {
-        width: 33%;
+    .send__mail {
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 5%;
     }
 
     .footer__title {
@@ -43,15 +40,8 @@ export const Container = styled.div`
         margin-bottom: 2%;
     }
 
-    .send__mail {
-        width: 33%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
     .inputbox {
-        width: 35%;
+        width: 70%;
         margin-top: 2%;
         background: none repeat scroll 0 0 #242424;
         border: 1px solid #6f6f6f;
@@ -60,6 +50,7 @@ export const Container = styled.div`
     }
 
     .button {
+        width: 10%;
         background: none repeat scroll 0 0 #242424;
         border: 1px solid #6f6f6f;
         border-left: transparent;
@@ -68,5 +59,9 @@ export const Container = styled.div`
 
     .icon__email {
         font-size: 0.8rem;
+    }
+
+    @media (min-width: 900px) {
+        padding: 5%;
     }
 `;

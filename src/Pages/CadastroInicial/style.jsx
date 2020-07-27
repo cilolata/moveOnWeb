@@ -1,37 +1,22 @@
 import styled from 'styled-components';
 
 export const SectionCadastro = styled.section`
-    .cadastro {
-        width: 100%;
-        padding: 3% 0 4% 0;
-        background-color: #fff;
-    }
+    background-color: rgb(234, 234, 234);
+    background-size: cover;
+    height: 100%;
 
-    .btn__close {
-        margin-left: 2%;
-        background: transparent;
-        border: transparent;
-    }
-
-    .icon__close {
-        font-size: 1.5rem;
-    }
-
-    .cadastro h1 {
+    .cadastro h2 {
         text-align: center;
+        padding-top: 10%;
+    }
+
+    .form__cadastro {
+        width: 100%;
     }
 
     .p__cadastro {
         text-align: center;
         padding-bottom: 3%;
-    }
-
-    .container__cadastro {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .btn__cadastro {
@@ -51,15 +36,25 @@ export const SectionCadastro = styled.section`
         opacity: 0.7;
     }
 
-    span {
-        font-weight: bold;
-    }
-
     .btn__cadastro:hover {
         background-color: rgb(2, 95, 95);
     }
 
     .form__intructions {
         font-size: 0.7rem;
+    }
+
+    @media (min-width: 900px) {
+        .container__cadastro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cadastro h2 {
+            padding-top: 5%;
+        }
+        .form__cadastro {
+            width: 30%;
+        }
     }
 `;

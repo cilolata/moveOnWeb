@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../../components/Form/Input';
 import { profileRegisterEmpresa } from '../../../store/modules/profileEmpresa/actions';
 
-import { ContainerEmpresa } from './style';
 
 function ProfileEmpresa() {
     const profile = useSelector((state) => state.user);
@@ -54,60 +53,40 @@ function ProfileEmpresa() {
         }
     };
     return (
-        <ContainerEmpresa>
+        <>
             <Form
-                className="form__completo"
+                className="form__cadastro"
                 onSubmit={handleSubmit}
                 initialData={initialData}
                 ref={formRef}
             >
-                <div className="div__field">
-                    <div className="div__label">
-                        <label>Nome: </label>
-                    </div>
-                    <div className="div__input">
-                        <Input
-                            type="text"
-                            name="nome"
-                            placeholder="Nome"
-                            title="Nome"
-                        />
-                    </div>
-                </div>
+                <Input
+                    type="text"
+                    name="nome"
+                    placeholder="Nome"
+                    title="Nome"
+                />
 
-                <div className="div__field">
-                    <div className="div__label">
-                        <label>Razão Social: </label>
-                    </div>
-                    <div className="div__input">
-                        <Input
-                            name="razao_social"
-                            placeholder="Razão Social"
-                            title="razão social"
-                            type="text"
-                        />
-                    </div>
-                </div>
+                <Input
+                    name="razao_social"
+                    placeholder="Razão Social"
+                    title="razão social"
+                    type="text"
+                />
 
-                <div className="div__field">
-                    <div className="div__label">
-                        <label>CNPJ: </label>
-                    </div>
-                    <div className="div__input">
-                        <Input
-                            type="text"
-                            name="cnpj"
-                            placeholder="xxxxxxxxxxxxxx"
-                            title="CNPJ"
-                        />
-                    </div>
-                </div>
+                <Input
+                    type="text"
+                    name="cnpj"
+                    placeholder="CNPJ"
+                    title="CNPJ"
+                />
+
                 <Input type="hidden" name="id" />
-                <button className="btn__form" type="submit">
+                <button className="btn__cadastro" type="submit">
                     Salvar
                 </button>
             </Form>
-        </ContainerEmpresa>
+        </>
     );
 }
 

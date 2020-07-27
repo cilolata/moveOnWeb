@@ -10,5 +10,8 @@ export const Container = styled.div`
         &:hover {
             opacity: 0.7;
         }
+
+    img{
+        width: 100%;
     }
 `;

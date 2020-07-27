@@ -1,37 +1,22 @@
 import styled from 'styled-components';
 
-export const ProfileContainer = styled.section`
-    text-align: center;
-    padding: 3% 0;
+export const Profile = styled.section`
+    background-color: rgb(234, 234, 234);
+    background-size: cover;
+    height: 100%;
 
-    .form__completo {
+    .container__cadastro {
+        padding-top: 10%;
+    }
+
+    .form__cadastro {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 3%;
     }
 
-    .div__field {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 70%;
-    }
-
-    .div__label {
-        width: 50%;
-        text-align: left;
-    }
-
-    .div__input {
-        width: 50%;
-    }
-
-    .btn__form {
-        width: 35%;
-        margin: 5px 0 0;
+    .btn__cadastro {
+        width: 100%;
+        margin: 15px 0 0;
         height: 44px;
         border: 0;
         border-radius: 4px;
@@ -42,7 +27,29 @@ export const ProfileContainer = styled.section`
         transition: background 0.2s;
     }
 
-    .btn__form:hover {
+    .btn__cadastro:hover {
         opacity: 0.7;
+    }
+
+    .btn__cadastro:hover {
+        background-color: rgb(2, 95, 95);
+    }
+
+    .form__intructions {
+        font-size: 0.7rem;
+    }
+
+    @media (min-width: 900px) {
+        .container__cadastro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cadastro h2 {
+            padding-top: 5%;
+        }
+        .form__cadastro {
+            width: 30%;
+        }
     }
 `;

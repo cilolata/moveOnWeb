@@ -5,6 +5,7 @@ import user from './user/reducer';
 import profileEmpresa from './profileEmpresa/reducer';
 import profileCliente from './profileCliente/reducer';
 import aparelhos from './aparelhos/reducer';
+import anuncios from './anuncios/reducer';
 
 export default combineReducers({
     auth,
@@ -12,4 +13,5 @@ export default combineReducers({
     profileEmpresa,
     profileCliente,
     aparelhos,
+    anuncios,
 });

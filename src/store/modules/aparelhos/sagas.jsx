@@ -11,8 +11,9 @@ export function* registerAparelho({ payload }) {
         peso,
         quantidade,
         valor_diaria,
+        file_id,
         empresa_id,
-    } = payload.data;
+    } = payload;
     try {
         yield call(api.post, 'aparelhos', {
             nome,
@@ -20,11 +21,10 @@ export function* registerAparelho({ payload }) {
             peso,
             quantidade,
             valor_diaria,
-            empresa_id,
             file_id,
+            empresa_id,
         });
     } catch (error) {
-        console.log(error)
         toast.error('cadastro inválido');
     }
 }

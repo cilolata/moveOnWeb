@@ -1,29 +1,40 @@
 import styled from 'styled-components';
 
-export const ContainerDashboard = styled.section`
-    padding: 1%;
-    background: #242424;
+export const MeusAnuncios = styled.section`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 3%;
 
-    h1,
-    h3 {
-        color: teal;
+    .card__img {
+        height: 150px;
     }
 
-    h1 {
-        margin: 3%;
+    Button {
+        background: teal;
     }
+`;
 
-    .categorias {
+export const Container = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .btn__cadastro {
         width: 100%;
-        display: flex;
+        margin: 15px 0 0;
+        height: 44px;
+        border: 0;
+        border-radius: 4px;
+        background: #228180;
+        font-weight: bold;
+        color: #fff;
+        font-size: 16px;
+        transition: background 0.2s;
     }
-
-    .categorias__destaque {
-        text-align: center;
-    }
-
-    img {
-        width: 50%;
-        border: 3px solid teal;
+    .btn__cadastro:hover {
+        opacity: 0.7;
     }
 `;

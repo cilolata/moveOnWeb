@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import Input from '../../../components/Form/Input';
 import { profileRegisterCliente } from '../../../store/modules/profileCliente/actions';
 
-import { ProfileContainer } from './style';
+import { Profile } from './style';
 import ProfileEmpresa from '../ProfileEmpresa';
 
 function ProfileCliente() {
@@ -62,77 +62,56 @@ function ProfileCliente() {
         }
     };
     return (
-        <ProfileContainer>
-            <h2>Cadastro</h2>
-            {type === '0' ? (
-                <Form
-                    className="form__completo"
-                    onSubmit={handleSubmit}
-                    initialData={initialData}
-                    ref={formRef}
-                >
-                    <div className="div__field">
-                        <div className="div__label">
-                            <label>Nome: </label>
-                        </div>
-                        <div className="div__input">
-                            <Input
-                                type="text"
-                                name="nome"
-                                placeholder="Nome"
-                                title="Nome"
-                            />
-                        </div>
-                    </div>
+        <Profile>
+            <div className="container__cadastro">
+                <h2>Cadastro</h2>
+                {type === '0' ? (
+                    <Form
+                        className="form__cadastro"
+                        onSubmit={handleSubmit}
+                        initialData={initialData}
+                        ref={formRef}
+                    >
+                        <Input
+                            className="input_cadastro"
+                            type="text"
+                            name="nome"
+                            placeholder="Nome"
+                            title="Nome"
+                        />
 
-                    <div className="div__field">
-                        <div className="div__label">
-                            <label>Sobrenome: </label>
-                        </div>
-                        <div className="div__input">
-                            <Input
-                                name="sobrenome"
-                                placeholder="Sobrenome"
-                                title="Sobrenome"
-                                type="text"
-                            />
-                        </div>
-                    </div>
+                        <Input
+                            className="input_cadastro"
+                            name="sobrenome"
+                            placeholder="Sobrenome"
+                            title="Sobrenome"
+                            type="text"
+                        />
 
-                    <div className="div__field">
-                        <div className="div__label">
-                            <label>CPF: </label>
-                        </div>
-                        <div className="div__input">
-                            <Input
-                                type="text"
-                                name="cpf"
-                                placeholder="xxx.xxx.xxx-xx"
-                                title="CPF"
-                            />
-                        </div>
-                    </div>
-                    <div className="div__field">
-                        <div className="div__label">
-                            <label>Data de Nascimento: </label>
-                        </div>
-                        <div className="div__input">
-                            <Input
-                                type="Date"
-                                name="data_nascimento"
-                                placeholder="Data de Nascimento"
-                                title="Data de Nascimento"
-                            />
-                        </div>
-                    </div>
-                    <button className="btn__form" type="submit">
-                        Salvar
-                    </button>
-                </Form>
-            ) : (
-                <ProfileEmpresa />
-            )}
-        </ProfileContainer>
+                        <Input
+                            className="input_cadastro"
+                            type="text"
+                            name="cpf"
+                            placeholder="xxx.xxx.xxx-xx"
+                            title="CPF"
+                        />
+
+                        <Input
+                            className="input_cadastro"
+                            type="Date"
+                            name="data_nascimento"
+                            placeholder="Data de Nascimento"
+                            title="Data de Nascimento"
+                        />
+                        <button className="btn__cadastro" type="submit">
+                            Salvar
+                        </button>
+                    </Form>
+                ) : (
+                    <ProfileEmpresa />
+                )}
+            </div>
+        </Profile>
     );
 }
 

@@ -3,32 +3,29 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     position: relative;
     display: inline-block;
-    margin: 2% 5% 2% 0;
-
+    margin: 2% 3% 2% 0;
     &:hover .dropdown-content {
         display: block;
     }
-
     .dropbtn {
         background-color: teal;
         color: white;
-        padding: 10px;
-        font-size: 16px;
+        padding: 4px 10px;
+        font-size: 14px;
         border-radius: 1px;
         border: none;
+        border-radius: 3px;
     }
-
     .dropdown-content {
         display: none;
         position: absolute;
-        min-width: 200px;
+        width: 200px;
         padding: 15%;
-        margin-left: -185%;
+        margin-left: -145%;
         background-color: #f9f9f9;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
-
     .btn__form {
         width: 100%;
         margin: 5px 0 0;
@@ -41,15 +38,12 @@ export const Wrapper = styled.div`
         font-size: 16px;
         transition: background 0.2s;
     }
-
     .dropdown-content .btn__form:hover {
         opacity: 0.7;
     }
-
     .dropbtn:hover {
         opacity: 0.7;
     }
-
     .input__auth {
         width: 100%;
         font-size: 0.8rem;

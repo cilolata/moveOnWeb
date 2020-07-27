@@ -62,14 +62,13 @@ function CadastroInicial() {
     return (
         <SectionCadastro>
             <div className="cadastro">
-                <h1 className="heading__cadastro">Faça o seu cadastro</h1>
+                <h2 className="heading__cadastro">Faça o seu cadastro</h2>
                 <p className="p__cadastro">ou entre com</p>
                 <div className="container__cadastro">
                     <Form
                         ref={formRef}
-                        className="form__cadastro"
+                        className="form__cadastro w-lg-50"
                         onSubmit={handleSubmit}
-                        style={{ width: '30%' }}
                     >
                         <CheckboxInput
                             name="checkbox"

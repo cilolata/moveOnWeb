@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect } from 'react';
@@ -24,9 +25,8 @@ const Input = ({ name, ...rest }) => {
     }, [fieldName, registerField]);
 
     return (
-        <div>
+        <>
             <InputForm
-                className="input__cadastro"
                 ref={inputRef}
                 onFocus={clearError}
                 defaultValue={defaultValue}
@@ -43,7 +43,7 @@ const Input = ({ name, ...rest }) => {
                     {error}
                 </span>
             )}
-        </div>
+        </>
     );
 };
 

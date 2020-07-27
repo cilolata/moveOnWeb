@@ -5,9 +5,9 @@ import api from '../../../services/api';
 import { Container } from './styles';
 
 function InputFoto() {
-    const { registerField } = useField('file_id');
-    const [file, setFile] = useState(null);
-    // const [ prewvew, setPreview] = useState()
+    const { defaultValue, registerField } = useField('file_id');
+    const [file, setFile] = useState(defaultValue && defaultValue.id);
+    const [preview, setPreview] = useState(defaultValue && defaultValue.url);
     const ref = useRef();
 
     useEffect(() => {
@@ -27,20 +27,23 @@ function InputFoto() {
 
         const response = await api.post('files', data);
 
-        const { id } = response.data;
+        const { id, url } = response.data;
 
         setFile(id);
+        setPreview(url);
     }
 
     return (
         <Container>
             <label htmlFor="foto">
+                <img src={preview} alt=""/>
                 <input
                     type="file"
-                    id="foto"
+                    id="file_id"
                     accept="image/*"
                     data-file={file}
                     onChange={handleChange}
+                    ref={ref}
                 />
             </label>
         </Container>

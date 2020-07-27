@@ -1,7 +1,14 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable react/button-has-type */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import Auth from '../Auth';
 import HeaderLogado from '../HeaderLogado';
 
@@ -12,30 +19,46 @@ const Header = () => {
 
     return (
         <HeaderContainer>
-            <div className="header__container--brand">
-                <div className="header__name--brand">
+            <Navbar
+                className="p-4"
+                collapseOnSelect
+                expand="lg"
+                bg="dark"
+                variant="dark"
+            >
+                <Navbar.Brand className="ml-lg-5">
                     <Link
                         to="/"
                         style={{ textDecoration: 'none', color: '#fff' }}
                     >
                         MoveOn
                     </Link>
-                </div>
-            </div>
-            <nav className="header__nav">
-                <ul className="header__ul">
-                    <li className="header__li">
-                        <Link to="/">Produtos</Link>
-                    </li>
-                    <li className="header__li">
-                        <Link to="/">Empresas</Link>
-                    </li>
-                    <li className="header__li">
-                        <Link to="/">Alugar</Link>
-                    </li>
-                </ul>
-            </nav>
-            {logado ? <HeaderLogado /> : <Auth />}
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse
+                    className="d-lg-flex justify-content-end"
+                    id="responsive-navbar-nav"
+                >
+                    <Form inline className="mx-auto d-none d-lg-block col-lg-6">
+                        <FormControl
+                            size="sm"
+                            type="text"
+                            placeholder="Pesquisar"
+                            className="w-75"
+                        />
+                        <Button
+                            size="sm"
+                            className="button__search ml-2 "
+                            type="submit"
+                        >
+                            Pesquisar
+                        </Button>
+                    </Form>
+                    <Nav className="my-auto ">
+                        {logado ? <HeaderLogado /> : <Auth />}
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         </HeaderContainer>
     );
 };

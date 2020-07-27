@@ -6,7 +6,8 @@ import user from './user/sagas';
 import profileEmpresa from './profileEmpresa/sagas';
 import profileCliente from './profileCliente/sagas';
 import aparelhos from './aparelhos/sagas';
+import anuncios from './anuncios/sagas';
 
 export default function* rootSaga() {
-    return yield all([auth, user, profileEmpresa, profileCliente, aparelhos]);
+    return yield all([auth, user, profileEmpresa, profileCliente, aparelhos, anuncios]);
 }
