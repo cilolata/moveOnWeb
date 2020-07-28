@@ -25,28 +25,28 @@ function Dashboard(props) {
         empresa_id: empresaId,
     };
 
-    useEffect(() => {
-        async function loadEmpresa() {
-            const response = await api.get('empresas');
-            const empresa = response.data.map((e) => {
-                return e.user_id;
-            });
-            // eslint-disable-next-line no-unused-vars
-            const emp_id = empresa.filter((i) => i === id);
-            setEmpresaId(emp_id);
-        }
-        loadEmpresa();
-    }, []);
-
     // useEffect(() => {
     //     async function loadEmpresa() {
     //         const response = await api.get('empresas');
-    //         const empresa = response.data.filter((e) => e.user_id === id);
+    //         const empresa = response.data.map((e) => {
+    //             return e.user_id;
+    //         });
     //         // eslint-disable-next-line no-unused-vars
-    //         const idEmpresa = empresa.map((i) => setEmpresaId(i.id));
+    //         const emp_id = empresa.filter((i) => i === id);
+    //         setEmpresaId(emp_id);
     //     }
     //     loadEmpresa();
-    // }, [id]);
+    // }, []);
+
+    useEffect(() => {
+        async function loadEmpresa() {
+            const response = await api.get('empresas');
+            const empresa = response.data.filter((e) => e.user_id === id);
+            // eslint-disable-next-line no-unused-vars
+            const idEmpresa = empresa.map((i) => setEmpresaId(i.id));
+        }
+        loadEmpresa();
+    }, [id]);
 
     function handleSubmit({
         nome,
