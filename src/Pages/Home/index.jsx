@@ -3,11 +3,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Footer from '../../components/Footer';
 
-import { MainHome, Container, Categorias, NovosAparelhos } from './style';
+import Footer from '../../components/Footer';
+import Carousel from '../../components/Carousel';
+
+import { MainHome, Container, Categorias } from './style';
 
 import product1 from '../../assets/product1.jpg';
 import product3 from '../../assets/product3.jpg';
@@ -29,88 +29,92 @@ function Home(props) {
                             </div>
                         </Container>
                         <Categorias>
-                            <h4>Categorias em destaque</h4>
+                            <h4 className="pt-3">Categorias em destaque</h4>
                             <div className="categorias__container">
                                 <div className="categorias__destaque">
-                                    <img src={product1} alt="" />
-                                    <p>Elipticos</p>
+                                    <Link
+                                        to="/eliptios"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product1} alt="" />
+                                        <p>Eliptios</p>
+                                    </Link>
                                 </div>
                                 <div className="categorias__destaque">
-                                    <img src={product3} alt="" />
-                                    <p>Estações</p>
+                                    <Link
+                                        to="/bicicletas"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product3} alt="" />
+                                        <p>Bicicletas</p>
+                                    </Link>
                                 </div>
                                 <div className="categorias__destaque">
-                                    <img src={product5} alt="" />
-                                    <p>Esteiras</p>
+                                    <Link
+                                        to="/esteiras"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product5} alt="" />
+                                        <p>Esteiras</p>
+                                    </Link>
                                 </div>
                                 <div className="categorias__destaque">
-                                    <img src={product6} alt="" />
-                                    <p>Pesos</p>
+                                    <Link
+                                        to="/acessorios"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product6} alt="" />
+                                        <p>Acessórios</p>
+                                    </Link>
                                 </div>
                             </div>
                         </Categorias>
-                        <NovosAparelhos>
-                            {props.aparelho.map((a) => (
-                                <Card
-                                    key={a.id}
-                                    style={{ width: '12rem', margin: '0 3%' }}
-                                >
-                                    <Card.Img
-                                        variant="top"
-                                        className="card__img"
-                                        src={a.foto.url}
-                                    />
-                                    <Card.Body className="p-1 mx-auto">
-                                        <Card.Title>{a.nome}</Card.Title>
-                                        <Card.Text>{a.descricao}</Card.Text>
-                                        <Button>Go somewhere</Button>
-                                    </Card.Body>
-                                </Card>
-                            ))}
-                        </NovosAparelhos>
+                        <Carousel aparelho={props.aparelho} />
                     </>
                 ) : (
                     <>
                         <Categorias>
-                            <h4>Categorias em destaque</h4>
+                            <h4 className="pt-5">Categorias em destaque</h4>
                             <div className="categorias__container">
                                 <div className="categorias__destaque">
-                                    <img src={product1} alt="" />
-                                    <p>Elipticos</p>
+                                    <Link
+                                        to="/eliptios"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product1} alt="" />
+                                        <p>Elipticos</p>
+                                    </Link>
                                 </div>
                                 <div className="categorias__destaque">
-                                    <img src={product3} alt="" />
-                                    <p>Estações</p>
+                                    <Link
+                                        to="/bicicletas"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product3} alt="" />
+                                        <p>Bicicletas</p>
+                                    </Link>
                                 </div>
                                 <div className="categorias__destaque">
-                                    <img src={product5} alt="" />
-                                    <p>Esteiras</p>
+                                    <Link
+                                        to="/esteiras"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product5} alt="" />
+                                        <p>Esteiras</p>
+                                    </Link>
                                 </div>
                                 <div className="categorias__destaque">
-                                    <img src={product6} alt="" />
-                                    <p>Pesos</p>
+                                    <Link
+                                        to="/acessorios"
+                                        className="text-reset d-flex flex-column align-items-center text-decoration-none"
+                                    >
+                                        <img src={product6} alt="" />
+                                        <p>Acessórios</p>
+                                    </Link>
                                 </div>
                             </div>
                         </Categorias>
-                        <NovosAparelhos>
-                            {props.aparelho.map((a) => (
-                                <Card
-                                    key={a.id}
-                                    style={{ width: '12rem', margin: '2% 3%' }}
-                                >
-                                    <Card.Img
-                                        variant="top"
-                                        className="card__img"
-                                        src={a.foto.url}
-                                    />
-                                    <Card.Body className="p-1 mx-auto">
-                                        <Card.Title>{a.nome}</Card.Title>
-                                        <Card.Text>{a.descricao}</Card.Text>
-                                        <Button>Go somewhere</Button>
-                                    </Card.Body>
-                                </Card>
-                            ))}
-                        </NovosAparelhos>
+                        <Carousel aparelho={props.aparelho} />
                     </>
                 )}
             </MainHome>

@@ -34,19 +34,22 @@ function InputFoto() {
     }
 
     return (
-        <Container>
-            <label htmlFor="foto">
-                <img src={preview} alt=""/>
-                <input
-                    type="file"
-                    id="file_id"
-                    accept="image/*"
-                    data-file={file}
-                    onChange={handleChange}
-                    ref={ref}
-                />
-            </label>
-        </Container>
+        <>
+            <Container>
+                <label htmlFor="file_id">
+                    carregue uma foto aqui
+                    <img src={preview} alt="" />
+                    <input
+                        type="file"
+                        id="file_id"
+                        accept="image/*"
+                        data-file={file}
+                        onChange={handleChange}
+                        ref={ref}
+                    />
+                </label>
+            </Container>
+        </>
     );
 }
 

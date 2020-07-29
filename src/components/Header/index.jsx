@@ -31,33 +31,27 @@ const Header = () => {
                         to="/"
                         style={{ textDecoration: 'none', color: '#fff' }}
                     >
-                        MoveOn
+                        Gímnica Magazine
                     </Link>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse
-                    className="d-lg-flex justify-content-end"
-                    id="responsive-navbar-nav"
-                >
-                    <Form inline className="mx-auto d-none d-lg-block col-lg-6">
-                        <FormControl
-                            size="sm"
-                            type="text"
-                            placeholder="Pesquisar"
-                            className="w-75"
-                        />
-                        <Button
-                            size="sm"
-                            className="button__search ml-2 "
-                            type="submit"
-                        >
-                            Pesquisar
-                        </Button>
-                    </Form>
-                    <Nav className="my-auto ">
-                        {logado ? <HeaderLogado /> : <Auth />}
-                    </Nav>
-                </Navbar.Collapse>
+                <Form inline className="mx-auto d-none d-lg-block col-lg-6">
+                    <FormControl
+                        size="sm"
+                        type="text"
+                        placeholder="Pesquisar"
+                        className="w-75"
+                    />
+                    <Button
+                        size="sm"
+                        className="button__search ml-2 "
+                        type="submit"
+                    >
+                        Pesquisar
+                    </Button>
+                </Form>
+                <Nav className="my-auto">
+                    {logado ? <HeaderLogado /> : <Auth />}
+                </Nav>
             </Navbar>
         </HeaderContainer>
     );

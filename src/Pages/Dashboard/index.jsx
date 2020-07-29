@@ -9,10 +9,21 @@ import { Form } from '@unform/web';
 import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../components/Form/Input';
 import InputFoto from '../../components/Form/InputFoto';
+import SelectForm from '../../components/Form/Select';
 import { registerAparelho } from '../../store/modules/aparelhos/actions';
 import api from '../../services/api';
 
-import { MeusAnuncios, Container } from './style';
+import { MeusAnuncios, Container, FormAnuncio } from './style';
+
+const option = [
+    { value: 'esteira', label: 'esteira' },
+    { value: 'eliptio', label: 'elipetio' },
+    { value: 'bicicleta', label: 'bicicleta' },
+    {
+        value: 'acessorios',
+        label: 'acessório (pesos, colchões, pesos, etc.)',
+    },
+];
 
 function Dashboard(props) {
     const [empresaId, setEmpresaId] = useState();
@@ -24,19 +35,6 @@ function Dashboard(props) {
     const initialData = {
         empresa_id: empresaId,
     };
-
-    // useEffect(() => {
-    //     async function loadEmpresa() {
-    //         const response = await api.get('empresas');
-    //         const empresa = response.data.map((e) => {
-    //             return e.user_id;
-    //         });
-    //         // eslint-disable-next-line no-unused-vars
-    //         const emp_id = empresa.filter((i) => i === id);
-    //         setEmpresaId(emp_id);
-    //     }
-    //     loadEmpresa();
-    // }, []);
 
     useEffect(() => {
         async function loadEmpresa() {
@@ -71,40 +69,26 @@ function Dashboard(props) {
     }
 
     return (
-        <>
-            <MeusAnuncios>
-                {props.aparelho.map((a) => (
-                    <Card key={a.id} style={{ width: '12rem', margin: '0 3%' }}>
-                        <Card.Img
-                            variant="top"
-                            className="card__img"
-                            src={a.foto.url}
-                        />
-                        <Card.Body className="p-1 mx-auto">
-                            <Card.Title>{a.nome}</Card.Title>
-                            <Card.Text>{a.descricao}</Card.Text>
-                            <Button>Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
-                ))}
-            </MeusAnuncios>
-            <Container>
+        <Container>
+            <FormAnuncio>
                 <h2>Novo Anúncio</h2>
                 <Form
                     ref={formRef}
                     className="cadastro_equipamento"
-                    style={{ width: '30%' }}
                     initialData={initialData}
                     onSubmit={handleSubmit}
                 >
-                    <InputFoto name="file_id" />
-                    <Input
+                    <InputFoto title="carregue uma foto" name="file_id" />
+                    <SelectForm
+                        className="input__equipamento"
                         name="nome"
                         placeholder="Nome do equipamento"
                         title="Nome do equipamento"
+                        options={option}
                     />
+
                     <Input
-                        className="input__textarea"
+                        className="input__equipamento"
                         type="textarea"
                         name="descricao"
                         placeholder="descrição"
@@ -112,20 +96,20 @@ function Dashboard(props) {
                     />
 
                     <Input
-                        className="input__peso"
+                        className="input__equipamento"
                         name="peso"
                         placeholder="peso em Kg"
                         title="peso"
                     />
                     <Input
-                        className="input__qta"
+                        className="input__equipamento"
                         type="number"
                         name="quantidade"
                         placeholder="quandidade"
                         title="quantidade"
                     />
                     <Input
-                        className="input__valor"
+                        className="input__equipamento"
                         name="valor_diaria"
                         placeholder="valor diária"
                         title="valor diária"
@@ -135,8 +119,30 @@ function Dashboard(props) {
                         Enviar
                     </button>
                 </Form>
-            </Container>
-        </>
+            </FormAnuncio>
+            <MeusAnuncios>
+                <h2>Meus Anúncios</h2>
+                <div className="container_meusAnuncios">
+                    {props.aparelho.map((a) => (
+                        <Card
+                            key={a.id}
+                            style={{ width: '12rem', margin: '3% 3%' }}
+                        >
+                            <Card.Img
+                                variant="top"
+                                className="card__img"
+                                src={a.foto.url}
+                            />
+                            <Card.Body className="p-1 mx-auto">
+                                <Card.Title>{a.nome}</Card.Title>
+                                <Card.Text>{a.descricao}</Card.Text>
+                                <Button>Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
+                    ))}
+                </div>
+            </MeusAnuncios>
+        </Container>
     );
 }
 

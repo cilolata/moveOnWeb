@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     background: none repeat scroll 0 0 #0f0f0f;
     background-size: cover;
-    padding: 3% 1%;
+    padding: 10% 1%;
     color: #fff;
 
     .copy__right {
@@ -30,9 +30,6 @@ export const Container = styled.div`
     }
     .send__mail {
         width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     .footer__title {
@@ -46,7 +43,7 @@ export const Container = styled.div`
         background: none repeat scroll 0 0 #242424;
         border: 1px solid #6f6f6f;
         border-right: transparent;
-        padding: 1% 1% 1% 2%;
+        padding: 1% 2%;
     }
 
     .button {
@@ -62,6 +59,14 @@ export const Container = styled.div`
     }
 
     @media (min-width: 900px) {
-        padding: 5%;
+        padding: 5% 0 5% 10%;
+
+        .send__mail {
+            margin-left: 35%;
+        }
+
+        .inputbox {
+            width: 30%;
+        }
     }
 `;

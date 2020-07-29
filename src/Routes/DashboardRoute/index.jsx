@@ -12,8 +12,6 @@ function HomeRoute() {
     const [empresaId, setEmpresaId] = useState();
     const [aparelho, setAparelho] = useState([]);
 
-    console.log(aparelho);
-
     useEffect(() => {
         async function loadEmpresa() {
             const response = await api.get('empresas');

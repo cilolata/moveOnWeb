@@ -16,13 +16,13 @@ const Footer = () => {
         <footer>
             <Container>
                 <div className="copy__right">
-                    <div className="footer__right">
+                    <div className="footer__right ml-4">
                         <div className="line1">
                             Copyright &copy; 2020
                             <Link to="/"> MoveOn Fitness</Link>
                         </div>
                     </div>
-                    <div className="social__icon--container">
+                    <div className="social__icon--container ml-4">
                         <FaFacebook className="social__icon" />
                         <FaTwitter className="social__icon" />
                         <FaInstagram className="social__icon" />

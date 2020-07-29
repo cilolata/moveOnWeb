@@ -1,15 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import api from '../../services/api';
 
 import Home from '../../Pages/Home';
+import { loadAnuncios } from '../../store/modules/anuncios/actions';
 
 function HomeRoute() {
-    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
 
-    const { id } = user.profile;
     const [aparelho, setAparelho] = useState([]);
+    dispatch(loadAnuncios(aparelho));
 
     useEffect(() => {
         async function loadEmpresa() {

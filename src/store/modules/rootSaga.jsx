@@ -9,5 +9,12 @@ import aparelhos from './aparelhos/sagas';
 import anuncios from './anuncios/sagas';
 
 export default function* rootSaga() {
-    return yield all([auth, user, profileEmpresa, profileCliente, aparelhos, anuncios]);
+    return yield all([
+        auth,
+        user,
+        profileEmpresa,
+        profileCliente,
+        aparelhos,
+        anuncios,
+    ]);
 }

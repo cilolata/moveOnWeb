@@ -45,16 +45,20 @@ export const SectionCadastro = styled.section`
     }
 
     @media (min-width: 900px) {
-        .container__cadastro {
+        .cadastro {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+        }
+        .container__cadastro {
+            width: 30%;
         }
         .cadastro h2 {
             padding-top: 5%;
         }
         .form__cadastro {
-            width: 30%;
+            width: 100%;
         }
     }
 `;

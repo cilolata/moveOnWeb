@@ -84,19 +84,3 @@ export const Categorias = styled.section`
         }
     }
 `;
-
-export const NovosAparelhos = styled.section`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: #fff;
-    padding: 3%;
-
-    .card__img {
-        height: 150px;
-    }
-
-    Button {
-        background: teal;
-    }
-`;

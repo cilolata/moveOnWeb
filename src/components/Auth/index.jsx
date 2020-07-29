@@ -53,7 +53,7 @@ export default function Auth() {
     return (
         <>
             <Wrapper>
-                <button type="button" className="dropbtn mr-5">
+                <button type="button" className="dropbtn mr-sm-3 mr-lg-5">
                     Entrar
                 </button>
                 <div className="dropdown-content">

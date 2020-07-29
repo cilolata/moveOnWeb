@@ -5,6 +5,10 @@ import Route from './Route';
 import DashboardRoute from './DashboardRoute';
 import CadastroInicial from '../Pages/CadastroInicial';
 import ProfileCliente from '../Pages/Profile/ProfileCliente';
+import Eliptios from '../Pages/AparelhosPages/Eliptios';
+import Esteiras from '../Pages/AparelhosPages/Esteiras';
+import Bicicletas from '../Pages/AparelhosPages/Bicicletas';
+import Acessorios from '../Pages/AparelhosPages/Acessorios';
 import HomeRoute from './HomeRoute';
 
 export default function Routes() {
@@ -18,6 +22,10 @@ export default function Routes() {
                 component={DashboardRoute}
                 isPrivate
             />
+            <Route path="/eliptios" component={Eliptios} />
+            <Route path="/esteiras" component={Esteiras} />
+            <Route path="/bicicletas" component={Bicicletas} />
+            <Route path="/acessorios" component={Acessorios} />
         </Switch>
     );
 }
