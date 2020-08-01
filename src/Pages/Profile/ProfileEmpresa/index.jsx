@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../../components/Form/Input';
 import { profileRegisterEmpresa } from '../../../store/modules/profileEmpresa/actions';
 
-
 function ProfileEmpresa() {
     const profile = useSelector((state) => state.user);
     const { nome, id } = profile.profile;

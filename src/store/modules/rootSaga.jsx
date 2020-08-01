@@ -7,6 +7,7 @@ import profileEmpresa from './profileEmpresa/sagas';
 import profileCliente from './profileCliente/sagas';
 import aparelhos from './aparelhos/sagas';
 import anuncios from './anuncios/sagas';
+import singleAparelho from './singleAparelho/sagas';
 
 export default function* rootSaga() {
     return yield all([
@@ -16,5 +17,6 @@ export default function* rootSaga() {
         profileCliente,
         aparelhos,
         anuncios,
+        singleAparelho,
     ]);
 }

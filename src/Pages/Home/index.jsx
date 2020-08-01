@@ -14,7 +14,7 @@ import product3 from '../../assets/product3.jpg';
 import product5 from '../../assets/product5.jpg';
 import product6 from '../../assets/product6.jpg';
 
-function Home(props) {
+function Home() {
     const logado = useSelector((state) => state.auth.signed);
 
     return (
@@ -69,7 +69,7 @@ function Home(props) {
                                 </div>
                             </div>
                         </Categorias>
-                        <Carousel aparelho={props.aparelho} />
+                        <Carousel />
                     </>
                 ) : (
                     <>
@@ -114,7 +114,7 @@ function Home(props) {
                                 </div>
                             </div>
                         </Categorias>
-                        <Carousel aparelho={props.aparelho} />
+                        <Carousel />
                     </>
                 )}
             </MainHome>

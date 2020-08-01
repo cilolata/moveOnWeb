@@ -16,6 +16,17 @@ import { HeaderContainer } from './style';
 
 const Header = () => {
     const logado = useSelector((state) => state.auth.signed);
+    // const aparelhos = useSelector((state) => state.anuncios.anuncios);
+    // const [search, setSearch] = useState([]);
+
+    // const handleChange = (event) => {
+    //     const findProduct = aparelhos.filter((product) =>
+    //         product.nome
+    //             .toLowerCase()
+    //             .includes(event.target.value.toLowerCase())
+    //     );
+    //     setSearch(findProduct);
+    // };
 
     return (
         <HeaderContainer>
@@ -34,12 +45,16 @@ const Header = () => {
                         Gímnica Magazine
                     </Link>
                 </Navbar.Brand>
-                <Form inline className="mx-auto d-none d-lg-block col-lg-6">
+                <Form
+                    inline
+                    className="form__search mx-auto d-none d-lg-block col-lg-6"
+                >
                     <FormControl
                         size="sm"
                         type="text"
                         placeholder="Pesquisar"
                         className="w-75"
+                        // onChange={handleChange}
                     />
                     <Button
                         size="sm"
@@ -49,6 +64,14 @@ const Header = () => {
                         Pesquisar
                     </Button>
                 </Form>
+                {/* <div className="search__container">
+                    {search.map((s) => (
+                        <>
+                            <img src={s.foto.url} alt="" />
+                            <p>{s.nome}</p>
+                        </>
+                    ))}
+                </div> */}
                 <Nav className="my-auto">
                     {logado ? <HeaderLogado /> : <Auth />}
                 </Nav>

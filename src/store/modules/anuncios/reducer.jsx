@@ -1,7 +1,11 @@
 /* eslint-disable no-param-reassign */
 import produce from 'immer';
 
-function anuncios(state = {}, action) {
+const INITIAL_STATE = {
+    anuncios: [],
+};
+
+function anuncios(state = INITIAL_STATE, action) {
     switch (action.type) {
         case '@anuncios/GET_ANUNCIOS':
             return produce(state, (draft) => {

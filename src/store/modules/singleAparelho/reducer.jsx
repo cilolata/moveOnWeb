@@ -2,14 +2,14 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-    registerAparelho: null,
+    singleAparelho: null,
 };
 
-function aparelhos(state = INITIAL_STATE, action) {
+function singleAparelho(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case '@aparelho/REGISTER_APARELHO':
+        case '@singleAparelho/SINGLE_APARELHO':
             return produce(state, (draft) => {
-                draft.registerAparelho = action.payload.data;
+                draft.singleAparelho = action.payload;
             });
 
         default:
@@ -17,4 +17,4 @@ function aparelhos(state = INITIAL_STATE, action) {
     }
 }
 
-export default aparelhos;
+export default singleAparelho;
