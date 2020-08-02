@@ -2,8 +2,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import CardProduct from '../../components/Card';
+
 
 import { Container } from './styles';
 
@@ -16,26 +16,15 @@ function Aparelho() {
 
     const singleAp = aparelhos.filter((ap) => ap.id == idProduct);
 
-
     return (
         <Container>
             <div className="container_meusAnuncios">
-                {singleAp.map((f) => (
-                    <Card
-                        key={f.id}
-                        style={{ width: '12rem', margin: '3% 3%' }}
-                    >
-                        <Card.Img
-                            variant="top"
-                            className="card__img"
-                            src={f.foto.url}
-                        />
-                        <Card.Body className="p-1 mx-auto">
-                            <Card.Title>{f.nome}</Card.Title>
-                            <Card.Text>{f.descricao}</Card.Text>
-                            <Button>Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
+                {singleAp.map((e) => (
+                    <CardProduct
+                        nome={e.nome}
+                        foto={e.foto.url}
+                        descricao={e.descricao}
+                    />
                 ))}
             </div>
         </Container>

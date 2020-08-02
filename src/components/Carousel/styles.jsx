@@ -28,12 +28,4 @@ export const Container = styled.div`
 export const NovosAparelhos = styled.div`
     display: flex;
     justify-content: center;
-
-    .card__img {
-        height: 150px;
-    }
-
-    Button {
-        background: teal;
-    }
 `;

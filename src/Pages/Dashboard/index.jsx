@@ -3,10 +3,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-shadow */
 import React, { useRef, useEffect, useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
 import { Form } from '@unform/web';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import CardProduct from '../../components/Card';
 import Input from '../../components/Form/Input';
 import InputFoto from '../../components/Form/InputFoto';
 import SelectForm from '../../components/Form/Select';
@@ -123,22 +124,18 @@ function Dashboard(props) {
             <MeusAnuncios>
                 <h2>Meus Anúncios</h2>
                 <div className="container_meusAnuncios">
-                    {props.aparelho.map((a) => (
-                        <Card
-                            key={a.id}
-                            style={{ width: '12rem', margin: '3% 3%' }}
+                    {props.aparelho.map((e) => (
+                        <Link
+                            to={`/aparelho/${e.id}`}
+                            key={e.id}
+                            className="m-3"
                         >
-                            <Card.Img
-                                variant="top"
-                                className="card__img"
-                                src={a.foto.url}
+                            <CardProduct
+                                nome={e.nome}
+                                foto={e.foto.url}
+                                descricao={e.descricao}
                             />
-                            <Card.Body className="p-1 mx-auto">
-                                <Card.Title>{a.nome}</Card.Title>
-                                <Card.Text>{a.descricao}</Card.Text>
-                                <Button>Go somewhere</Button>
-                            </Card.Body>
-                        </Card>
+                        </Link>
                     ))}
                 </div>
             </MeusAnuncios>

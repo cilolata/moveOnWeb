@@ -7,8 +7,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useSelector } from 'react-redux';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import CardProduct from '../Card';
 
 import { Container, NovosAparelhos } from './styles';
 
@@ -49,24 +48,11 @@ function Carousel() {
                     {aparelhos.map((e) => (
                         <Link to={`/aparelho/${e.id}`} key={e.id}>
                             <NovosAparelhos>
-                                <Card
-                                    style={{
-                                        width: '15rem',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    <Card.Img
-                                        variant="top"
-                                        className="card__img"
-                                        src={e.foto.url}
-                                    />
-                                    <Card.Body className="p-1 mx-auto">
-                                        <Card.Title>{e.nome}</Card.Title>
-                                        <Card.Text>{e.descricao}</Card.Text>
-                                        <Button>Go somewhere</Button>
-                                    </Card.Body>
-                                </Card>
+                                <CardProduct
+                                    nome={e.nome}
+                                    foto={e.foto.url}
+                                    descricao={e.descricao}
+                                />
                             </NovosAparelhos>
                         </Link>
                     ))}

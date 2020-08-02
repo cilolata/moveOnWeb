@@ -14,12 +14,4 @@ export const Container = styled.section`
         flex-wrap: wrap;
         padding: 3%;
     }
-
-    .card__img {
-        height: 150px;
-    }
-
-    Button {
-        background: teal;
-    }
 `;
