@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     background: none repeat scroll 0 0 #0f0f0f;
     background-size: cover;
-    padding: 10% 1%;
+    padding: 15% 0;
     color: #fff;
 
     .copy__right {

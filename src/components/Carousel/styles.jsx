@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    padding: 5% 10%;
+    padding: 15%;
 
     .slick-slide {
         width: 30%;
@@ -18,6 +18,10 @@ export const Container = styled.div`
     .slick-arrow:active,
     .slick-arrow:focus {
         background-color: teal;
+    }
+
+    @media (min-width: 900px) {
+        padding: 7%;
     }
 `;
 

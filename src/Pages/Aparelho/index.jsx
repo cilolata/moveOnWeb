@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -8,17 +9,22 @@ import { Container } from './styles';
 
 function Aparelho() {
     const { id } = useParams();
+    const idProduct = id;
     const aparelhos = useSelector((state) =>
-        state.anuncios.anuncios.filter((a) => a.id === id)
+        state.anuncios.anuncios.filter((a) => a)
     );
+
+    const singleAp = aparelhos.filter((ap) => ap.id == idProduct);
+
 
     return (
         <Container>
-            <h2 className="pt-4">Acessórios</h2>
             <div className="container_meusAnuncios">
-                {/* {aparelhos.filter((f) => {
-                    return f.id === id;
-                    <Card style={{ width: '12rem', margin: '3% 3%' }}>
+                {singleAp.map((f) => (
+                    <Card
+                        key={f.id}
+                        style={{ width: '12rem', margin: '3% 3%' }}
+                    >
                         <Card.Img
                             variant="top"
                             className="card__img"
@@ -29,8 +35,8 @@ function Aparelho() {
                             <Card.Text>{f.descricao}</Card.Text>
                             <Button>Go somewhere</Button>
                         </Card.Body>
-                    </Card>;
-                })} */}
+                    </Card>
+                ))}
             </div>
         </Container>
     );

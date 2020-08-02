@@ -15,7 +15,6 @@ export const Container = styled.div`
     background-position-x: left;
     background-position-y: 10%;
     background-size: cover;
-    height: 30vh;
 
     h1 {
         color: rgb(234, 234, 234);
@@ -56,7 +55,6 @@ export const Categorias = styled.section`
 
     h4 {
         text-align: center;
-        padding: 2% 0;
     }
 
     .categorias__container {

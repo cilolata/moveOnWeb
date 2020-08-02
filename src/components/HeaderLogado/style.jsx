@@ -43,4 +43,10 @@ export const ContainerHeader = styled.div`
         color: #000;
         padding-bottom: 5%;
     }
+
+    @media (max-width: 348px) {
+        .dropdown {
+            margin-left: 0;
+        }
+    }
 `;

@@ -73,8 +73,10 @@ function Home() {
                     </>
                 ) : (
                     <>
-                        <Categorias>
-                            <h4 className="pt-5">Categorias em destaque</h4>
+                        <Categorias className="h-25">
+                            <h4 className="pt-3 pb-3">
+                                Categorias em destaque
+                            </h4>
                             <div className="categorias__container">
                                 <div className="categorias__destaque">
                                     <Link
@@ -114,11 +116,11 @@ function Home() {
                                 </div>
                             </div>
                         </Categorias>
-                        <Carousel />
+                        <Carousel className="h-50" />
                     </>
                 )}
             </MainHome>
-            <Footer />
+            <Footer classNamw="h-20" />
         </>
     );
 }

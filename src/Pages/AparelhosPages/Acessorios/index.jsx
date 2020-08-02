@@ -7,7 +7,7 @@ import { Container } from './styles';
 
 function Acessorios() {
     const eliptios = useSelector((state) =>
-        state.anuncios.anuncios.map((a) => a)
+        state.anuncios.anuncios.map((b) => b)
     );
 
     const filter = eliptios.filter((f) => f.nome === 'acessorios');
