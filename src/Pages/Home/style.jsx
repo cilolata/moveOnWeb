@@ -15,6 +15,7 @@ export const Container = styled.div`
     background-position-x: left;
     background-position-y: 10%;
     background-size: cover;
+    height: 30vh;
 
     h1 {
         color: rgb(234, 234, 234);
@@ -34,7 +35,7 @@ export const Container = styled.div`
 
     @media (min-width: 900px) {
         background-position-y: 50%;
-        height: 100vh;
+        height: 90vh;
 
         h1 {
             width: 50%;
