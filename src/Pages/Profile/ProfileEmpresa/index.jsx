@@ -1,15 +1,17 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-shadow */
 /* eslint-disable no-undef */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Form } from '@unform/web';
 
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../../components/Form/Input';
 import { profileRegisterEmpresa } from '../../../store/modules/profileEmpresa/actions';
+import CadastroEndereco from '../../../components/CadastroEndereco';
 
 function ProfileEmpresa() {
+    const [visible, setVisible] = useState(false);
     const profile = useSelector((state) => state.user);
     const { nome, id } = profile.profile;
     const formRef = useRef(null);
@@ -81,10 +83,15 @@ function ProfileEmpresa() {
                 />
 
                 <Input type="hidden" name="id" />
-                <button className="btn__cadastro" type="submit">
+                <button
+                    className="btn__cadastro"
+                    type="submit"
+                    onClick={() => setVisible(!visible)}
+                >
                     Salvar
                 </button>
             </Form>
+            {visible && <CadastroEndereco />}
         </>
     );
 }

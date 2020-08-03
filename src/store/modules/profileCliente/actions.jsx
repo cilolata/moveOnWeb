@@ -1,8 +1,14 @@
 /* eslint-disable no-console */
-export function profileRegisterCliente(nome, sobrenome, cpf, dataNascimento) {
+export function profileRegisterCliente(
+    nome,
+    sobrenome,
+    cpf,
+    dataNascimento,
+    id
+) {
     return {
         type: '@cliente/PROFILE_REGISTER_CLIENTE',
-        payload: { nome, sobrenome, cpf, dataNascimento },
+        payload: { nome, sobrenome, cpf, dataNascimento, id },
     };
 }
 

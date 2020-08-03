@@ -7,6 +7,7 @@ import profileCliente from './profileCliente/reducer';
 import aparelhos from './aparelhos/reducer';
 import anuncios from './anuncios/reducer';
 import singleAparelho from './singleAparelho/reducer';
+import address from './endereco/reducer';
 
 export default combineReducers({
     auth,
@@ -16,4 +17,5 @@ export default combineReducers({
     aparelhos,
     anuncios,
     singleAparelho,
+    address,
 });

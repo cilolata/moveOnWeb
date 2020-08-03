@@ -2,8 +2,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import CardProduct from '../../components/Card';
-
 
 import { Container } from './styles';
 
@@ -18,15 +16,19 @@ function Aparelho() {
 
     return (
         <Container>
-            <div className="container_meusAnuncios">
-                {singleAp.map((e) => (
-                    <CardProduct
-                        nome={e.nome}
-                        foto={e.foto.url}
-                        descricao={e.descricao}
-                    />
-                ))}
-            </div>
+            {singleAp.map((e) => (
+                <>
+                    <div className="div__img">
+                        <img src={e.foto.url} alt="" />
+                    </div>
+                    <div classnName="div__infos">
+                        <h2>{e.nome}</h2>
+                        <p>{e.descricao}</p>
+                        <p>R$ {e.valor_diaria}</p>
+                        <p>{e.peso}KG </p>
+                    </div>
+                </>
+            ))}
         </Container>
     );
 }

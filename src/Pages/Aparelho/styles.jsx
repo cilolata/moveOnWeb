@@ -1,26 +1,24 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
+    display: flex;
+    padding-top: 5%;
     width: 100%;
-    padding: 3%;
 
-    h2 {
-        text-align: center;
-    }
-
-    .container_meusAnuncios {
+    .div__img {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        padding: 3%;
+        width: 50%;
     }
 
-    .card__img {
-        height: 150px;
+    img {
+        width: 70%;
+
     }
 
-    Button {
-        background: teal;
+    .div__infos {
+        width: 50%;
+        padding: 10%;
     }
+
 `;
-

@@ -6,13 +6,14 @@ import { toast } from 'react-toastify';
 import api from '../../../services/api';
 
 export function* profileCliente({ payload }) {
-    const { nome, sobrenome, cpf, dataNascimento } = payload;
+    const { nome, sobrenome, cpf, dataNascimento, id } = payload;
     try {
         yield call(api.post, 'clientes', {
             nome,
             sobrenome,
             data_nascimento: dataNascimento,
             cpf,
+            user_id: id,
         });
     } catch (error) {
         toast.error('cadastro inválido');
