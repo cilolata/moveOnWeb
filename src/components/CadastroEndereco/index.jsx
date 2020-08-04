@@ -83,6 +83,12 @@ function CadastroEndereco() {
                     placeholder="Cidade"
                     title="cidade"
                 />
+                <Input
+                    type="text"
+                    name="estado"
+                    placeholder="Estado"
+                    title="estado"
+                />
                 <Input type="text" name="uf" placeholder="UF" title="uf" />
                 <Input type="text" name="cep" placeholder="CEP" title="cep" />
                 <Input

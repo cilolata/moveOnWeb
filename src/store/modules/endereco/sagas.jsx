@@ -6,21 +6,20 @@ import { toast } from 'react-toastify';
 import api from '../../../services/api';
 
 export function* registerAdd({ payload }) {
+    const {
+        rua,
+        numero,
+        bairro,
+        cidade,
+        estado,
+        uf,
+        cep,
+        telefone,
+        celular,
+        id,
+    } = payload;
     try {
-        const {
-            rua,
-            numero,
-            bairro,
-            cidade,
-            estado,
-            uf,
-            cep,
-            telefone,
-            celular,
-            id,
-        } = payload;
-
-        const response = yield call(api.post, 'enderecos', {
+        yield call(api.post, 'enderecos', {
             rua,
             numero,
             bairro,
