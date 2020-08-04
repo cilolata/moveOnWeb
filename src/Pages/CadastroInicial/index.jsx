@@ -7,25 +7,23 @@ import * as Yup from 'yup';
 import { SectionCadastro } from './style';
 
 import Input from '../../components/Form/Input';
-import CheckboxInput from '../../components/Form/CheckboxInput';
+import SelectForm from '../../components/Form/Select';
 import { signUpRequest } from '../../store/modules/auth/actions';
+
+const option = [
+    { id: '0', value: '0', label: 'Usuário' },
+    { id: '1', value: '1', label: 'Empresa' },
+];
 
 function CadastroInicial() {
     const formRef = useRef(null);
     const dispatch = useDispatch();
 
-    const checkboxOptions = [
-        { id: '0', value: '0', label: 'Usuário' },
-        { id: '1', value: '1', label: 'Empresa' },
-    ];
-
     const handleSubmit = async (
         { nome, email, password, checkbox },
         { reset }
     ) => {
-        const type = checkbox[0];
-
-        dispatch(signUpRequest(nome, email, password, type));
+        dispatch(signUpRequest(nome, email, password, checkbox));
         try {
             const schema = Yup.object().shape({
                 nome: Yup.string().required('O nome é obrigatório'),
@@ -70,10 +68,8 @@ function CadastroInicial() {
                         className="form__cadastro w-lg-50"
                         onSubmit={handleSubmit}
                     >
-                        <CheckboxInput
-                            name="checkbox"
-                            options={checkboxOptions}
-                        />
+                        <SelectForm name="checkbox" options={option} />
+
                         <Input name="nome" placeholder="Nome" title="nome" />
                         <Input name="email" placeholder="Email" title="Email" />
                         <Input

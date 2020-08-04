@@ -27,13 +27,13 @@ export function* signIn({ payload }) {
 
 export function* signUp({ payload }) {
     try {
-        const { nome, email, password, type } = payload;
+        const { nome, email, password, checkbox } = payload;
 
         yield call(api.post, 'users', {
             nome,
             email,
             password,
-            type,
+            type: checkbox,
         });
 
         history.push('/');

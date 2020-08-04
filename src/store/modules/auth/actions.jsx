@@ -12,10 +12,10 @@ export function signInSuccess(token, user) {
     };
 }
 
-export function signUpRequest(nome, email, password, type) {
+export function signUpRequest(nome, email, password, checkbox) {
     return {
         type: '@auth/SIGN_UP_REQUEST',
-        payload: { nome, email, password, type },
+        payload: { nome, email, password, checkbox },
     };
 }
 
