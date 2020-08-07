@@ -17,11 +17,16 @@ function Esteiras() {
             <h2 className="pt-4">Esteiras</h2>
             <div className="container_meusAnuncios">
                 {filter.map((e) => (
-                    <Link to={`/aparelho/${e.id}`} key={e.id} className="m-3">
+                    <Link
+                        to={`/aparelho/${e.id}`}
+                        key={e.id}
+                        className="m-3 text-decoration-none text-dark"
+                    >
                         <CardProduct
                             nome={e.nome}
                             foto={e.foto.url}
                             descricao={e.descricao}
+                            valorDiaria={e.valor_diaria}
                         />
                     </Link>
                 ))}

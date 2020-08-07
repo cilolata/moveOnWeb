@@ -3,6 +3,8 @@
 import { takeLatest, call, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import api from '../../../services/api';
+import history from '../../../services/history';
+
 
 export function* registerAparelho({ payload }) {
     const {
@@ -12,7 +14,7 @@ export function* registerAparelho({ payload }) {
         quantidade,
         valor_diaria,
         file_id,
-        empresa_id,
+        id,
     } = payload;
     try {
         yield call(api.post, 'aparelhos', {
@@ -22,8 +24,9 @@ export function* registerAparelho({ payload }) {
             quantidade,
             valor_diaria,
             file_id,
-            empresa_id,
+            empresa_id: id,
         });
+        history.push(`/dashboard/${nome}`);
     } catch (error) {
         toast.error('cadastro inválido');
     }

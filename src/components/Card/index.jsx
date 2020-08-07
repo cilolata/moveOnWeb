@@ -6,20 +6,21 @@ import Button from 'react-bootstrap/Button';
 import { Container } from './styles';
 
 function CardProduct(props) {
-    const { nome, foto, descricao } = props;
+    const { nome, foto, valorDiaria } = props;
     return (
         <Container>
             <Card
                 style={{
                     width: '15rem',
-                    display: 'flex',
-                    justifyContent: 'center',
+                    margin: '5px',
                 }}
             >
                 <Card.Img variant="top" className="card__img" src={foto} />
                 <Card.Body className="p-4">
                     <Card.Title>{nome}</Card.Title>
-                    <Card.Text>{descricao}</Card.Text>
+                    <Card.Text className="card__text">
+                        valor diária: R${valorDiaria}
+                    </Card.Text>
                     <Button className="w-100">Alugar</Button>
                 </Card.Body>
             </Card>

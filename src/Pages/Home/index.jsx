@@ -3,8 +3,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import Footer from '../../components/Footer';
+
 import Carousel from '../../components/Carousel';
 
 import { MainHome, Container, Categorias } from './style';
@@ -120,7 +120,7 @@ function Home() {
                     </>
                 )}
             </MainHome>
-            <Footer classNamw="h-20" />
+            <Footer />
         </>
     );
 }

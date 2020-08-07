@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-shadow */
 /* eslint-disable no-undef */
@@ -10,16 +11,27 @@ import Input from '../../../components/Form/Input';
 import { profileRegisterEmpresa } from '../../../store/modules/profileEmpresa/actions';
 import CadastroEndereco from '../../../components/CadastroEndereco';
 
+import { ProfileEmpresaStyle } from './styles';
+
 function ProfileEmpresa() {
-    const [visible, setVisible] = useState(false);
     const profile = useSelector((state) => state.user);
+    const dados = useSelector((state) => state.getEmpresa.empresa);
+    const endereco = useSelector((state) => state.address.getAddress);
+
     const { nome, id } = profile.profile;
     const formRef = useRef(null);
+    const [visible, setVisible] = useState(false);
+    const [checked, setChecked] = useState(false);
     const dispatch = useDispatch();
+
+    const razaoSocial = dados.map((d) => d.razao_social);
+    const cnpj = dados.map((d) => d.cnpj);
 
     const initialData = {
         nome,
         id,
+        cnpj,
+        razao_social: razaoSocial,
     };
 
     const handleSubmit = async (data, { reset }) => {
@@ -54,45 +66,93 @@ function ProfileEmpresa() {
         }
     };
     return (
-        <>
+        <ProfileEmpresaStyle>
+            {/* <div className="d-flex flex-column">
+                {dados.length === 0 ? (
+                    <>
+                        <div>
+                            <input type="checkbox" defaultChecked={checked} />
+                            <label className="ml-3">Cadastro Completo</label>
+                        </div>
+                    </>
+                ) : (
+                    <div>
+                        <input type="checkbox" defaultChecked={!checked} />
+                        <label className="ml-3">Cadastro Completo</label>
+                    </div>
+                )}
+
+                {endereco.length === 0 ? (
+                    <div>
+                        <input type="checkbox" defaultChecked={checked} />
+                        <label className="ml-3">
+                            Cadastro Endereço Completo
+                        </label>
+                        <button
+                            type="button"
+                            className="ml-2"
+                            onClick={() => setVisible(!visible)}
+                        >
+                            Completar
+                        </button>
+                    </div>
+                ) : (
+                    <div>
+                        <input type="checkbox" defaultChecked={!checked} />
+                        <label className="ml-3">
+                            Cadastro Endereço Completo
+                        </label>
+                    </div>
+                )}
+            </div> */}
+
             <Form
                 className="form__cadastro"
                 onSubmit={handleSubmit}
                 initialData={initialData}
                 ref={formRef}
             >
-                <Input
-                    type="text"
-                    name="nome"
-                    placeholder="Nome"
-                    title="Nome"
-                />
+                <div className="d-flex flex-wrap">
+                    <div className="container__label m-3">
+                        <label>Nome</label>
+                        <Input
+                            type="text"
+                            name="nome"
+                            placeholder="Nome"
+                            title="Nome"
+                        />
+                    </div>
 
-                <Input
-                    name="razao_social"
-                    placeholder="Razão Social"
-                    title="razão social"
-                    type="text"
-                />
+                    <div className="container__label m-3">
+                        <label>Razão Social</label>
 
-                <Input
-                    type="text"
-                    name="cnpj"
-                    placeholder="CNPJ"
-                    title="CNPJ"
-                />
+                        <Input
+                            name="razao_social"
+                            placeholder="Razão Social"
+                            title="razão social"
+                            type="text"
+                        />
+                    </div>
 
-                <Input type="hidden" name="id" />
-                <button
-                    className="btn__cadastro"
-                    type="submit"
-                    onClick={() => setVisible(!visible)}
-                >
+                    <div className="container__label m-3">
+                        <label>CNPJ</label>
+
+                        <Input
+                            type="text"
+                            name="cnpj"
+                            placeholder="CNPJ"
+                            title="CNPJ"
+                        />
+                    </div>
+
+                    <Input type="hidden" name="id" />
+                </div>
+                <button className="btn__cadastro m-3" type="submit">
                     Salvar
                 </button>
             </Form>
-            {visible && <CadastroEndereco />}
-        </>
+            <CadastroEndereco />
+        </ProfileEmpresaStyle>
     );
 }
 

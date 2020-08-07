@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     position: relative;
     display: inline-block;
     margin: 2% 3% 2% 0;
+
     &:hover .dropdown-content {
         display: block;
     }
@@ -21,9 +22,13 @@ export const Wrapper = styled.div`
         position: absolute;
         width: 200px;
         padding: 15%;
-        margin-left: -250%;
+        margin-left: -50%;
         background-color: #f9f9f9;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+        .input__auth {
+            width: 99%;
+        }
         z-index: 1;
 
         @media (min-width: 900px) {
@@ -51,7 +56,7 @@ export const Wrapper = styled.div`
             opacity: 0.7;
         }
 
-        .input__auth {
+        .input__rotaCadastro {
             width: 100%;
             font-size: 0.8rem;
             padding-top: 4%;

@@ -21,7 +21,7 @@ export const ContainerHeader = styled.div`
         position: absolute;
         min-width: 200px;
         padding: 15%;
-        margin-left: -100%;
+        margin-left: -20%;
         background-color: #fff;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
@@ -42,11 +42,5 @@ export const ContainerHeader = styled.div`
     a {
         color: #000;
         padding-bottom: 5%;
-    }
-
-    @media (max-width: 348px) {
-        .dropdown {
-            margin-left: 0;
-        }
     }
 `;

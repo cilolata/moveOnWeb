@@ -1,32 +1,30 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/button-has-type */
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Auth from '../Auth';
 import HeaderLogado from '../HeaderLogado';
+import ModalSearch from '../ModalSearch';
 
 import { HeaderContainer } from './style';
 
 const Header = () => {
     const logado = useSelector((state) => state.auth.signed);
-    // const aparelhos = useSelector((state) => state.anuncios.anuncios);
-    // const [search, setSearch] = useState([]);
+    const aparelhos = useSelector((state) => state.anuncios.anuncios);
+    const [search, setSearch] = useState([]);
 
-    // const handleChange = (event) => {
-    //     const findProduct = aparelhos.filter((product) =>
-    //         product.nome
-    //             .toLowerCase()
-    //             .includes(event.target.value.toLowerCase())
-    //     );
-    //     setSearch(findProduct);
-    // };
+    const handleChange = (event) => {
+        const findProduct = aparelhos.filter((product) =>
+            product.nome
+                .toLowerCase()
+                .includes(event.target.value.toLowerCase())
+        );
+        setSearch(findProduct);
+    };
 
     return (
         <HeaderContainer>
@@ -45,34 +43,18 @@ const Header = () => {
                         Gímnica Magazine
                     </Link>
                 </Navbar.Brand>
-                <Form
-                    inline
-                    className="form__search mx-auto d-none d-lg-block col-lg-6"
-                >
-                    <FormControl
-                        size="sm"
-                        type="text"
-                        placeholder="Pesquisar"
-                        className="w-75"
-                        // onChange={handleChange}
-                    />
-                    <Button
-                        size="sm"
-                        className="button__search ml-2 "
-                        type="submit"
-                    >
-                        Pesquisar
-                    </Button>
-                </Form>
-                {/* <div className="search__container">
-                    {search.map((s) => (
-                        <>
-                            <img src={s.foto.url} alt="" />
-                            <p>{s.nome}</p>
-                        </>
-                    ))}
-                </div> */}
-                <Nav className="my-auto">
+                <div className=" d-lg-block d-none w-75">
+                    <div className="form__search">
+                        <input
+                            type="text"
+                            className="w-50 pl-2 rounded mr-2"
+                            placeholder="Pesquisar"
+                            onChange={handleChange}
+                        />
+                        <ModalSearch search={search} />
+                    </div>
+                </div>
+                <Nav className="my-auto ml-5">
                     {logado ? <HeaderLogado /> : <Auth />}
                 </Nav>
             </Navbar>

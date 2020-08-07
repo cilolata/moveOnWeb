@@ -18,6 +18,7 @@ export function* signIn({ payload }) {
         api.defaults.headers.Authorization = `Bearer ${token}`;
 
         yield put(signInSuccess(token, user));
+
         history.push('/');
     } catch (error) {
         toast.error('email e/ou senha inválidos');

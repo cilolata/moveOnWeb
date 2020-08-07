@@ -5,15 +5,36 @@ export function profileRegisterEmpresa(data) {
     };
 }
 
-export function profileSuccessEmpresa(empresa) {
+export function profileRegisterSuccess(empresa) {
     return {
-        type: '@empresa/PROFILE_SUCCESS_EMPRESA',
+        type: '@empresa/PROFILE_REGISTER_EMPRESA_SUCCESS',
         payload: { empresa },
     };
 }
 
-export function profileFailureEmpresa() {
+export function profileRegisterFailure() {
     return {
-        type: '@empresa/PROFILE_FAILURE_EMPRESA',
+        type: '@empresa/PROFILE_REGISTER_EMPRESA_FAILURE',
+    };
+}
+
+export function updateProfileEmpresa(data) {
+    return {
+        type: '@empresa/UPDATE_PROFILE_EMPRESA',
+        payload: { data },
+    };
+}
+
+export function updateProfileEmpresaSuccess(data) {
+    return {
+        type: '@empresa/UPDATE_PROFILE_EMPRESA_SUCCESS',
+        payload: { data },
+    };
+}
+
+export function updateProfileEmpresaFailure(data) {
+    return {
+        type: '@empresa/UPDATE_PROFILE_EMPRESA_FAILURE',
+        payload: { data },
     };
 }

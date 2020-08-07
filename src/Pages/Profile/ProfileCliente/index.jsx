@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */
-/* eslint-disable no-shadow */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable camelcase */
 import React, { useRef, useState } from 'react';
 import { Form } from '@unform/web';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +8,7 @@ import Input from '../../../components/Form/Input';
 import { profileRegisterCliente } from '../../../store/modules/profileCliente/actions';
 import CadastroEndereco from '../../../components/CadastroEndereco';
 
-import { Profile } from './style';
+import { Profile, Container } from './style';
 import ProfileEmpresa from '../ProfileEmpresa';
 
 function ProfileCliente() {
@@ -67,67 +65,81 @@ function ProfileCliente() {
     };
 
     return (
-        <Profile>
-            <div className="container__cadastro">
-                <h2>Cadastro</h2>
-                {type === '0' ? (
-                    <>
-                        <Form
-                            className="form__cadastro"
-                            onSubmit={handleSubmit}
-                            initialData={initialData}
-                            ref={formRef}
-                        >
-                            <Input
-                                className="input_cadastro"
-                                type="text"
-                                name="nome"
-                                placeholder="Nome"
-                                title="Nome"
-                            />
-
-                            <Input
-                                className="input_cadastro"
-                                name="sobrenome"
-                                placeholder="Sobrenome"
-                                title="Sobrenome"
-                                type="text"
-                            />
-
-                            <Input
-                                className="input_cadastro"
-                                type="text"
-                                name="cpf"
-                                placeholder="xxx.xxx.xxx-xx"
-                                title="CPF"
-                            />
-
-                            <Input
-                                className="input_cadastro"
-                                type="Date"
-                                name="data_nascimento"
-                                placeholder="Data de Nascimento"
-                                title="Data de Nascimento"
-                            />
-                            <Input type="hidden" name="id" />
-
-                            <button
-                                className="btn__cadastro"
-                                type="submit"
-                                onClick={() => setVisible(!visible)}
+        <Container>
+            <h2 className="ml-3 cadastro__heading">Cadastro</h2>
+            {type === '0' ? (
+                <>
+                    <Profile>
+                        <>
+                            <Form
+                                className="form__cadastro"
+                                onSubmit={handleSubmit}
+                                initialData={initialData}
+                                ref={formRef}
                             >
-                                Salvar
-                            </button>
-                        </Form>
-                        {visible && <CadastroEndereco />}
-                    </>
-                ) : (
-                    <>
-                        <ProfileEmpresa />
-                    </>
-                )}
-            </div>
-        </Profile>
+                                <div className="d-flex flex-wrap">
+                                    <div className="container__label m-3">
+                                        <label>Nome</label>
+                                        <Input
+                                            className="input_cadastro"
+                                            type="text"
+                                            name="nome"
+                                            placeholder="Nome"
+                                            title="Nome"
+                                        />
+                                    </div>
+                                    <div className="container__label m-3">
+                                        <label>Sobrenome</label>
+                                        <Input
+                                            className="input_cadastro"
+                                            name="sobrenome"
+                                            placeholder="Sobrenome"
+                                            title="Sobrenome"
+                                            type="text"
+                                        />
+                                    </div>
+                                    <div className="container__label m-3">
+                                        <label>CPF</label>
+                                        <Input
+                                            className="input_cadastro"
+                                            type="text"
+                                            name="cpf"
+                                            placeholder="xxx.xxx.xxx-xx"
+                                            title="CPF"
+                                        />
+                                    </div>
+
+                                    <div className="container__label m-3">
+                                        <label className="w-100">
+                                            Data de nascimento
+                                        </label>
+                                        <Input
+                                            className="input_cadastro"
+                                            type="Date"
+                                            name="data_nascimento"
+                                            placeholder="Data de Nascimento"
+                                            title="Data de Nascimento"
+                                        />
+                                        <Input type="hidden" name="id" />
+                                    </div>
+                                </div>
+
+                                <button
+                                    className="btn__cadastro"
+                                    type="submit"
+                                    onClick={() => setVisible(!visible)}
+                                >
+                                    Salvar
+                                </button>
+                            </Form>
+                            <CadastroEndereco />
+                        </>
+                    </Profile>
+                </>
+            ) : (
+                <ProfileEmpresa />
+            )}
+        </Container>
     );
 }
 

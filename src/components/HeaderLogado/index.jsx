@@ -19,8 +19,14 @@ function HeaderLogado() {
     return (
         <ContainerHeader>
             <div className="menu__dropdown">
-                <strong className="w-100">Olá {nome}</strong>
-                <MdArrowDropDown style={{ color: '#fff', fontSize: '30px' }} />
+                <strong className="w-100">{nome}</strong>
+                <MdArrowDropDown
+                    style={{
+                        color: '#fff',
+                        fontSize: '30px',
+                        marginRight: '60px',
+                    }}
+                />
             </div>
             <div className="dropdown">
                 <div className="dropdown__content">
@@ -31,6 +37,9 @@ function HeaderLogado() {
                             <Link to={`/profile/${id}`}>Meu perfil</Link>
                             <Link to={`/dashboard/${nome}`}>
                                 Painel de Controle
+                            </Link>
+                            <Link to={`/novoanuncio/${nome}`}>
+                                Novo Anúncio
                             </Link>
                         </>
                     )}

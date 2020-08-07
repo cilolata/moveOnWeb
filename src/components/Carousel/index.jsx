@@ -46,12 +46,17 @@ function Carousel() {
             <div className="div__container">
                 <Slider {...settings}>
                     {aparelhos.map((e) => (
-                        <Link to={`/aparelho/${e.id}`} key={e.id}>
+                        <Link
+                            to={`/aparelho/${e.id}`}
+                            key={e.id}
+                            className="text-decoration-none text-dark"
+                        >
                             <NovosAparelhos>
                                 <CardProduct
                                     nome={e.nome}
                                     foto={e.foto.url}
                                     descricao={e.descricao}
+                                    valorDiaria={e.valor_diaria}
                                 />
                             </NovosAparelhos>
                         </Link>

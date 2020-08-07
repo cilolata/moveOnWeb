@@ -63,12 +63,14 @@ export default function Auth() {
                             type="email"
                             placeholder="E-mail"
                             title="E-mail"
+                            className="input__auth"
                         />
                         <Input
                             name="password"
                             type="password"
                             placeholder="Senha"
                             title="Senha"
+                            className="input__auth mt-2"
                         />
                         <button className="btn__form" type="submit">
                             {loading ? 'Carregando...' : 'Entrar'}
@@ -77,7 +79,7 @@ export default function Auth() {
                     <Link to="/cadastro">
                         <input
                             type="button"
-                            className="input__auth"
+                            className="input__rotaCadastro"
                             value="cadastre-se"
                         />
                     </Link>

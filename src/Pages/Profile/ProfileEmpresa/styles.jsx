@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
-    background-color: rgb(234, 234, 234);
-    background-size: cover;
-
-    .cadastro__heading {
-        padding: 5% 20% 0;
-    }
-`;
-
-export const Profile = styled.div`
+export const ProfileEmpresaStyle = styled.section`
     padding: 2% 20%;
 
     .form__cadastro {
@@ -27,7 +18,7 @@ export const Profile = styled.div`
 
     .btn__cadastro {
         width: 50%;
-        margin: 15px 0 0 15px;
+        margin: 15px 0 0;
         height: 44px;
         border: 0;
         border-radius: 4px;

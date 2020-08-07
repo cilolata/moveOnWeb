@@ -9,7 +9,7 @@ function aparelhos(state = INITIAL_STATE, action) {
     switch (action.type) {
         case '@aparelho/REGISTER_APARELHO':
             return produce(state, (draft) => {
-                draft.registerAparelho = action.payload.data;
+                draft.registerAparelho = action.payload;
             });
 
         default:

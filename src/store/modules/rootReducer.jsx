@@ -8,6 +8,7 @@ import aparelhos from './aparelhos/reducer';
 import anuncios from './anuncios/reducer';
 import singleAparelho from './singleAparelho/reducer';
 import address from './endereco/reducer';
+import getEmpresa from './empresa/reducer';
 
 export default combineReducers({
     auth,
@@ -18,4 +19,5 @@ export default combineReducers({
     anuncios,
     singleAparelho,
     address,
+    getEmpresa,
 });

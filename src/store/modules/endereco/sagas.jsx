@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
-import { takeLatest, call, put, all } from 'redux-saga/effects';
+import { takeLatest, call, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
 import api from '../../../services/api';
@@ -17,7 +16,7 @@ export function* registerAdd({ payload }) {
         telefone,
         celular,
         id,
-    } = payload;
+    } = payload.data;
     try {
         yield call(api.post, 'enderecos', {
             rua,

@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import Header from '../components/Header';
 import '../config/ReactotronConfig';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+// import Footer from '../components/Footer';
 
 import history from '../services/history';
 
@@ -25,6 +25,7 @@ function App() {
                     <GlobalStyle />
                     <ToastContainer autoClose={3000} />
                     <Routes />
+                    {/* <Footer /> */}
                 </Router>
             </PersistGate>
         </Provider>

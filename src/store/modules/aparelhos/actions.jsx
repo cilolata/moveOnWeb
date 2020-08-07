@@ -6,7 +6,7 @@ export function registerAparelho(
     quantidade,
     valor_diaria,
     file_id,
-    empresa_id
+    id
 ) {
     return {
         type: '@aparelho/REGISTER_APARELHO',
@@ -17,7 +17,7 @@ export function registerAparelho(
             quantidade,
             valor_diaria,
             file_id,
-            empresa_id,
+            id,
         },
     };
 }
